@@ -385,6 +385,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pothole Report/Pothole Report-Prefix.pch";
 				INFOPLIST_FILE = "Pothole Report/Pothole Report-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -396,6 +397,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pothole Report/Pothole Report-Prefix.pch";
 				INFOPLIST_FILE = "Pothole Report/Pothole Report-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -454,6 +456,7 @@
 				50CEC74A1735936D007ADC0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		50CEC74B1735936D007ADC0B /* Build configuration list for PBXNativeTarget "Pothole ReportTests" */ = {
 			isa = XCConfigurationList;
@@ -462,6 +465,7 @@
 				50CEC74D1735936D007ADC0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
