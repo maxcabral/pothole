@@ -13,7 +13,8 @@
 - (void)setUp
 {
     [super setUp];
-    
+    laSubmission = [[phLosAngelesSubmission alloc] init];
+    laSubmission.delegate = self;
     // Set-up code here.
 }
 
@@ -24,9 +25,21 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testSubmit
 {
-    STFail(@"Unit tests are not implemented yet in Pothole ReportTests");
+    [laSubmission submitWithName:@"MAX" Address:@"100 Main St" Phone:@"8001234567" Email:@"max@maxcabral.com" Description:@"Massive Pothole" Comment:@"This is a test" AndLocation:@"Los Angeles"];
+    //STFail(@"Unit tests are not implemented yet in Pothole ReportTests");
+}
+
+- (void)handleResponse:(NSDictionary*)response
+{
+    if (!response){
+        STFail(@"Response object is nil");
+    }
+
+    for (NSString* key in response){
+        NSLog(@"%@ - %@",key,[response objectForKey:key]);
+    }
 }
 
 @end

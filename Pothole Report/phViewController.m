@@ -7,6 +7,7 @@
 //
 
 #import "phViewController.h"
+#import "phLosAngelesSubmission.h"
 
 @interface phViewController()
 
@@ -23,6 +24,7 @@
     CLPlacemark *placemark;
     BOOL performingReverseGeocoding;
     NSError *lastGeocodingError;
+    phLosAngelesSubmission *laSubmission;
 }
 
 @synthesize latitudeLabel;
@@ -165,6 +167,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    laSubmission = [[phLosAngelesSubmission alloc] init];
+    laSubmission.delegate = self;
     [self updateLabels];
     [self configureGetButton];
 }
@@ -249,6 +253,25 @@
             [self updateLabels];
             [self configureGetButton];
         }
+    }
+}
+
+@end
+
+/********
+ 
+ Submission class response handler
+ 
+ ********/
+@interface phViewController (SubmissionResponseHandler) <phSubmissionResponse>
+
+@end
+
+@implementation phViewController (SubmissionResponseHandler)
+- (void)handleResponse:(NSDictionary*)response
+{
+    for (NSString* key in response){
+        NSLog(@"%@ - %@",key,[response objectForKey:key]);
     }
 }
 @end

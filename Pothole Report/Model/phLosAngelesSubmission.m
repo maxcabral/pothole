@@ -12,6 +12,7 @@
 
 -(void)submitWithName:(NSString*)name Address:(NSString*)address Phone:(NSString*)phone Email:(NSString*)email Description:(NSString*)desc Comment:(NSString*)comment AndLocation:(NSString*)loc
 {
+    NSLog(@"Testing");
     [self submit:[[NSDictionary alloc] initWithObjects:[[NSArray alloc] initWithObjects:
                                                         @"You+must+enter+a+Name",
                                                         @"You+must+enter+a+Phone Number",

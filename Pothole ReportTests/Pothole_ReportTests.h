@@ -7,7 +7,11 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
+#import "phLosAngelesSubmission.h"
 
-@interface Pothole_ReportTests : SenTestCase
+@interface Pothole_ReportTests : SenTestCase <phSubmissionResponse>
+{
+    phLosAngelesSubmission *laSubmission;
+}
 
 @end
