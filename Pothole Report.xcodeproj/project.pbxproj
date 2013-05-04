@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		502D8D5E1735A7FE00AD11AE /* phLosAngelesSubmission.m in Sources */ = {isa = PBXBuildFile; fileRef = 502D8D5B1735A7FE00AD11AE /* phLosAngelesSubmission.m */; };
+		502D8D5F1735A7FE00AD11AE /* phSubmission.m in Sources */ = {isa = PBXBuildFile; fileRef = 502D8D5D1735A7FE00AD11AE /* phSubmission.m */; };
 		50CEC7141735936D007ADC0B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7131735936D007ADC0B /* UIKit.framework */; };
 		50CEC7161735936D007ADC0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7151735936D007ADC0B /* Foundation.framework */; };
 		50CEC7181735936D007ADC0B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7171735936D007ADC0B /* CoreGraphics.framework */; };
@@ -37,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		502D8D5A1735A7FE00AD11AE /* phLosAngelesSubmission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = phLosAngelesSubmission.h; sourceTree = "<group>"; };
+		502D8D5B1735A7FE00AD11AE /* phLosAngelesSubmission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = phLosAngelesSubmission.m; sourceTree = "<group>"; };
+		502D8D5C1735A7FE00AD11AE /* phSubmission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = phSubmission.h; sourceTree = "<group>"; };
+		502D8D5D1735A7FE00AD11AE /* phSubmission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = phSubmission.m; sourceTree = "<group>"; };
 		50CEC7101735936D007ADC0B /* Pothole Report.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pothole Report.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CEC7131735936D007ADC0B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		50CEC7151735936D007ADC0B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -87,6 +93,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		502D8D591735A7FE00AD11AE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				502D8D5A1735A7FE00AD11AE /* phLosAngelesSubmission.h */,
+				502D8D5B1735A7FE00AD11AE /* phLosAngelesSubmission.m */,
+				502D8D5C1735A7FE00AD11AE /* phSubmission.h */,
+				502D8D5D1735A7FE00AD11AE /* phSubmission.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		50CEC7071735936D007ADC0B = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +138,7 @@
 		50CEC7191735936D007ADC0B /* Pothole Report */ = {
 			isa = PBXGroup;
 			children = (
+				502D8D591735A7FE00AD11AE /* Model */,
 				50CEC7221735936D007ADC0B /* phAppDelegate.h */,
 				50CEC7231735936D007ADC0B /* phAppDelegate.m */,
 				50CEC72B1735936D007ADC0B /* MainStoryboard.storyboard */,
@@ -278,6 +296,8 @@
 				50CEC7201735936D007ADC0B /* main.m in Sources */,
 				50CEC7241735936D007ADC0B /* phAppDelegate.m in Sources */,
 				50CEC7301735936D007ADC0B /* phViewController.m in Sources */,
+				502D8D5E1735A7FE00AD11AE /* phLosAngelesSubmission.m in Sources */,
+				502D8D5F1735A7FE00AD11AE /* phSubmission.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
