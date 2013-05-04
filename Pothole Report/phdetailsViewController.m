@@ -21,8 +21,16 @@
 @synthesize addressLabel;
 @synthesize dateLabel;
 
+
+- (void)closeScreen
+{
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (IBAction)done:(id)sender
 {
+    [self closeScreen];
+    
 }
 
 - (IBAction)cancel:(id)sender
