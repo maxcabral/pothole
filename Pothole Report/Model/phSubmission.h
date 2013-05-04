@@ -9,13 +9,13 @@
 #import <Foundation/Foundation.h>
 @protocol phSubmissionResponse
 - (void)handleResponse:(NSDictionary*)response;
-
 @end
 
 @interface phSubmission : NSObject
 {
-    
+    NSOperationQueue *queue;
 }
-@property (weak) id<phSubmissionResponse> delegate;
+@property (weak) NSObject<phSubmissionResponse>* delegate;
+@property (readonly,nonatomic) NSString* submissionUrl;
 -(void)submit:(NSDictionary*)fields;
 @end
