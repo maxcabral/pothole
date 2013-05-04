@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface phdetailsViewController : UITableViewController
+@interface phdetailsViewController : UITableViewController <UITextViewDelegate>
 @property (nonatomic, strong) IBOutlet UITextView *descriptionTextView;
 
 @property (nonatomic, strong) IBOutlet UILabel *latitudeLabel;

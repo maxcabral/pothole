@@ -27,6 +27,7 @@
 		50CEC7451735936D007ADC0B /* Pothole_ReportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CEC7441735936D007ADC0B /* Pothole_ReportTests.m */; };
 		F65084D01735A2C700D93C90 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F65084CF1735A2C700D93C90 /* CoreLocation.framework */; };
 		F65084D31735B5ED00D93C90 /* phdetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F65084D21735B5ED00D93C90 /* phdetailsViewController.m */; };
+		F65084D61735CBA000D93C90 /* HudView.m in Sources */ = {isa = PBXBuildFile; fileRef = F65084D51735CBA000D93C90 /* HudView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,8 @@
 		F65084CF1735A2C700D93C90 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		F65084D11735B5ED00D93C90 /* phdetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = phdetailsViewController.h; sourceTree = "<group>"; };
 		F65084D21735B5ED00D93C90 /* phdetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = phdetailsViewController.m; sourceTree = "<group>"; };
+		F65084D41735CBA000D93C90 /* HudView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HudView.h; sourceTree = "<group>"; };
+		F65084D51735CBA000D93C90 /* HudView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HudView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +152,8 @@
 				50CEC72F1735936D007ADC0B /* phViewController.m */,
 				F65084D11735B5ED00D93C90 /* phdetailsViewController.h */,
 				F65084D21735B5ED00D93C90 /* phdetailsViewController.m */,
+				F65084D41735CBA000D93C90 /* HudView.h */,
+				F65084D51735CBA000D93C90 /* HudView.m */,
 				50CEC71A1735936D007ADC0B /* Supporting Files */,
 			);
 			path = "Pothole Report";
@@ -304,6 +309,7 @@
 				502D8D5E1735A7FE00AD11AE /* phLosAngelesSubmission.m in Sources */,
 				502D8D5F1735A7FE00AD11AE /* phSubmission.m in Sources */,
 				F65084D31735B5ED00D93C90 /* phdetailsViewController.m in Sources */,
+				F65084D61735CBA000D93C90 /* HudView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

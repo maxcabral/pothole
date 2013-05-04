@@ -144,6 +144,9 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="Oyt-4B-QfB" id="kd0-AC-JGp"/>
+                                                    </connections>
                                                 </textView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -293,7 +296,7 @@
                     <connections>
                         <outlet property="addressLabel" destination="dGX-uj-RR8" id="57d-Oh-DYm"/>
                         <outlet property="dateLabel" destination="5sB-ye-LMt" id="LcF-QP-r3p"/>
-                        <outlet property="descriptionTextView" destination="fv1-Z0-7Ch" id="PH6-ld-1gF"/>
+                        <outlet property="descriptionTextView" destination="fv1-Z0-7Ch" id="j8F-Ac-1gy"/>
                         <outlet property="latitudeLabel" destination="L2l-I1-DZ0" id="rGd-Gy-wSC"/>
                         <outlet property="longitudeLabel" destination="iEA-xa-Iw6" id="zdq-4o-lpU"/>
                     </connections>
@@ -322,6 +325,34 @@
             <point key="canvasLocation" x="483" y="-57"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="phViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/phViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="getphLocation:"/>
+                <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="getButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="latitudeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="longitudeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tagButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="phdetailsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/phdetailsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel:"/>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="descriptionTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="latitudeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="longitudeLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

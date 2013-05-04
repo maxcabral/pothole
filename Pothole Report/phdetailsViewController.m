@@ -6,14 +6,18 @@
 //  Copyright (c) 2013 Pothole. All rights reserved.
 //
 
+
+#import "HudView.h"
 #import "phViewController.h"
 #import "phdetailsViewController.h"
 
-@interface phdetailsViewController ()
+@interface phdetailsViewController () {
+    NSString *descriptionText;
+}
 
 @end
 
-@implementation phdetailsViewController
+@implementation phdetailsViewController 
 
 @synthesize descriptionTextView; 
 @synthesize latitudeLabel;
@@ -23,16 +27,37 @@
 @synthesize coordinate;
 @synthesize placemark;
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    if ((self = [super initWithCoder:aDecoder])) {
+        descriptionText = @"";
+    }
+    return self;
+}
+
+- (void)hideKeyboard:(UIGestureRecognizer *)gestureRecognizer
+{
+    CGPoint point = [gestureRecognizer locationInView:self.tableView];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:point];
+    
+    if (indexPath != nil && indexPath.section == 0 && indexPath.row == 0) {
+        return;
+    }
+    
+    [self.descriptionTextView resignFirstResponder];
+}
 
 - (void)closeScreen
 {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
+
+
 - (IBAction)done:(id)sender
 {
-    [self closeScreen];
-    
+    HudView *hudView = [HudView hudInView:self.navigationController.view animated:YES];
+    hudView.text = @"Tagged";
 }
 
 - (IBAction)cancel:(id)sender
@@ -63,7 +88,8 @@
 {
     [super viewDidLoad];
     
-    self.descriptionTextView.text = @"";
+    self.descriptionTextView.text = descriptionText;
+
 
     
     self.latitudeLabel.text = [NSString stringWithFormat:@"%.8f", self.coordinate.latitude];
@@ -76,6 +102,13 @@
     }
     
     self.dateLabel.text = [self formatDate:[NSDate date]];
+    
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc]
+                                                 initWithTarget:self action:@selector(hideKeyboard:)];
+    
+    gestureRecognizer.cancelsTouchesInView = NO;
+    [self.tableView addGestureRecognizer:gestureRecognizer];
+
 }
 
 #pragma mark - UITableViewDelegate
@@ -97,6 +130,35 @@
     } else {
         return 44;
     }
+}
+
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0 || indexPath.section == 1) {
+        return indexPath;
+    } else {
+        return nil;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0 && indexPath.row == 0) {
+        [self.descriptionTextView becomeFirstResponder];
+    }
+}
+
+#pragma mark - UITextViewDelegate
+
+- (BOOL)textView:(UITextView *)theTextView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    descriptionText = [theTextView.text stringByReplacingCharactersInRange:range withString:text];
+    return YES;
+}
+
+- (void)textViewDidEndEditing:(UITextView *)theTextView
+{
+    descriptionText = theTextView.text;
 }
 
 @end
