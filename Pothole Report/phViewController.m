@@ -8,6 +8,7 @@
 
 #import "phViewController.h"
 #import "phLosAngelesSubmission.h"
+#import "phdetailsViewController.h"
 
 @interface phViewController()
 
@@ -32,7 +33,16 @@
 @synthesize addressLabel;
 @synthesize tagButton;
 
-
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"TagPothole"]) {
+        UINavigationController *navigationController = segue.destinationViewController;
+        phdetailsViewController *controller = (phdetailsViewController *)navigationController.topViewController;
+        controller.coordinate = location.coordinate;
+        controller.placemark = placemark;
+        
+    }
+}
 
 - (IBAction)getphLocation:(id)sender
 
