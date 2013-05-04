@@ -41,19 +41,22 @@
         }
     }
     NSLog(@"Debug: Request string - %@",ReqString);
-    return;
-    
     
     NSData *ReqData = [NSData dataWithBytes: [ReqString UTF8String] length: [ReqString length]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"POST"];
+    [request setValue:[NSString stringWithFormat:@"%d", [ReqData length]] forHTTPHeaderField:@"Content-Length"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:ReqData];
+
+    
+    NSLog(@"%@",request.HTTPMethod);
     
     [NSURLConnection sendAsynchronousRequest:request queue:self->queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
     {
         NSDictionary* Response;
         NSString* ResponseMessage;
-        NSString* RawResponse;
+        NSString* RawResponse = @"";
         if ([data length] > 0 && error == nil){
             ResponseMessage = @"success";
             RawResponse = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
