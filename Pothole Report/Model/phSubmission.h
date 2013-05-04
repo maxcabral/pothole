@@ -15,7 +15,7 @@
 {
     NSOperationQueue *queue;
 }
-@property (weak) NSObject<phSubmissionResponse>* delegate;
+@property (weak) id<phSubmissionResponse> delegate;
 @property (readonly,nonatomic) NSString* submissionUrl;
 -(void)submit:(NSDictionary*)fields;
 @end

@@ -50,6 +50,7 @@
     
     [self updateLabels];
     [self configureGetButton];
+    [laSubmission submitWithName:@"MAX" Address:@"100 Main St" Phone:@"8001234567" Email:@"max@maxcabral.com" Description:@"Massive Pothole" Comment:@"This is a test" AndLocation:@"Los Angeles"];
 }
 
 
@@ -168,7 +169,7 @@
 {
     [super viewDidLoad];
     laSubmission = [[phLosAngelesSubmission alloc] init];
-    laSubmission.delegate = self;
+    laSubmission.delegate = (id)self;
     [self updateLabels];
     [self configureGetButton];
 }

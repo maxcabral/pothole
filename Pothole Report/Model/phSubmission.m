@@ -28,7 +28,7 @@
 -(void)submit:(NSDictionary*)fields
 {    
     NSURL *url = [NSURL URLWithString:self.submissionUrl];
-    NSMutableString *ReqString;
+    NSMutableString *ReqString = [[NSMutableString alloc] init];
     
     //AsynchronousRequest to grab the data
     int fieldCount = [fields count];
@@ -76,7 +76,7 @@
         }
         Response = [[NSDictionary alloc] initWithObjects:[[NSArray alloc] initWithObjects:ResponseMessage,RawResponse,nil]
                                                  forKeys:[[NSArray alloc] initWithObjects:@"message",@"response",nil]];
-        [self.delegate performSelectorOnMainThread:@selector(handleResponse:)
+        [(NSObject*)self.delegate performSelectorOnMainThread:@selector(handleResponse:)
                                         withObject:Response
                                      waitUntilDone:NO];
     }];
