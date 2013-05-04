@@ -16,5 +16,8 @@
 @property (nonatomic, strong) IBOutlet UILabel *longitudeLabel;
 @property (nonatomic, strong) IBOutlet UILabel *addressLabel;
 @property (nonatomic, strong) IBOutlet UIButton *tagButton;
+@property (nonatomic, strong) IBOutlet UIButton *getButton;
+
+- (IBAction)getphLocation:(id)sender;
 
 @end
