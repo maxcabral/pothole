@@ -23,6 +23,8 @@
 		50CEC73A1735936D007ADC0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7151735936D007ADC0B /* Foundation.framework */; };
 		50CEC7421735936D007ADC0B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50CEC7401735936D007ADC0B /* InfoPlist.strings */; };
 		50CEC7451735936D007ADC0B /* Pothole_ReportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CEC7441735936D007ADC0B /* Pothole_ReportTests.m */; };
+		50CEC752173596A1007ADC0B /* phSubmission.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CEC751173596A1007ADC0B /* phSubmission.m */; };
+		50CEC753173596A1007ADC0B /* phSubmission.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CEC751173596A1007ADC0B /* phSubmission.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		50CEC7411735936D007ADC0B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		50CEC7431735936D007ADC0B /* Pothole_ReportTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pothole_ReportTests.h; sourceTree = "<group>"; };
 		50CEC7441735936D007ADC0B /* Pothole_ReportTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pothole_ReportTests.m; sourceTree = "<group>"; };
+		50CEC750173596A1007ADC0B /* phSubmission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = phSubmission.h; path = Model/phSubmission.h; sourceTree = "<group>"; };
+		50CEC751173596A1007ADC0B /* phSubmission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = phSubmission.m; path = Model/phSubmission.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,8 @@
 		50CEC7191735936D007ADC0B /* Pothole Report */ = {
 			isa = PBXGroup;
 			children = (
+				50CEC74F17359672007ADC0B /* Controllers */,
+				50CEC74E17359667007ADC0B /* Model */,
 				50CEC7221735936D007ADC0B /* phAppDelegate.h */,
 				50CEC7231735936D007ADC0B /* phAppDelegate.m */,
 				50CEC72B1735936D007ADC0B /* MainStoryboard.storyboard */,
@@ -158,6 +164,22 @@
 				50CEC7401735936D007ADC0B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		50CEC74E17359667007ADC0B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				50CEC750173596A1007ADC0B /* phSubmission.h */,
+				50CEC751173596A1007ADC0B /* phSubmission.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		50CEC74F17359672007ADC0B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,6 +296,7 @@
 				50CEC7201735936D007ADC0B /* main.m in Sources */,
 				50CEC7241735936D007ADC0B /* phAppDelegate.m in Sources */,
 				50CEC7301735936D007ADC0B /* phViewController.m in Sources */,
+				50CEC752173596A1007ADC0B /* phSubmission.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50CEC7451735936D007ADC0B /* Pothole_ReportTests.m in Sources */,
+				50CEC753173596A1007ADC0B /* phSubmission.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
