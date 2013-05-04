@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		502D8D5E1735A7FE00AD11AE /* phLosAngelesSubmission.m in Sources */ = {isa = PBXBuildFile; fileRef = 502D8D5B1735A7FE00AD11AE /* phLosAngelesSubmission.m */; };
 		502D8D5F1735A7FE00AD11AE /* phSubmission.m in Sources */ = {isa = PBXBuildFile; fileRef = 502D8D5D1735A7FE00AD11AE /* phSubmission.m */; };
+		502D8D981735C1CF00AD11AE /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 502D8D971735C1CF00AD11AE /* NSString+URLEncoding.m */; };
 		50CEC7141735936D007ADC0B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7131735936D007ADC0B /* UIKit.framework */; };
 		50CEC7161735936D007ADC0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7151735936D007ADC0B /* Foundation.framework */; };
 		50CEC7181735936D007ADC0B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7171735936D007ADC0B /* CoreGraphics.framework */; };
@@ -44,6 +45,8 @@
 		502D8D5B1735A7FE00AD11AE /* phLosAngelesSubmission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = phLosAngelesSubmission.m; sourceTree = "<group>"; };
 		502D8D5C1735A7FE00AD11AE /* phSubmission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = phSubmission.h; sourceTree = "<group>"; };
 		502D8D5D1735A7FE00AD11AE /* phSubmission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = phSubmission.m; sourceTree = "<group>"; };
+		502D8D961735C16900AD11AE /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+URLEncoding.h"; path = "SupportingFiles/NSString+URLEncoding.h"; sourceTree = "<group>"; };
+		502D8D971735C1CF00AD11AE /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+URLEncoding.m"; path = "SupportingFiles/NSString+URLEncoding.m"; sourceTree = "<group>"; };
 		50CEC7101735936D007ADC0B /* Pothole Report.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pothole Report.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CEC7131735936D007ADC0B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		50CEC7151735936D007ADC0B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -164,6 +167,8 @@
 				50CEC7251735936D007ADC0B /* Default.png */,
 				50CEC7271735936D007ADC0B /* Default@2x.png */,
 				50CEC7291735936D007ADC0B /* Default-568h@2x.png */,
+				502D8D961735C16900AD11AE /* NSString+URLEncoding.h */,
+				502D8D971735C1CF00AD11AE /* NSString+URLEncoding.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -304,6 +309,7 @@
 				502D8D5E1735A7FE00AD11AE /* phLosAngelesSubmission.m in Sources */,
 				502D8D5F1735A7FE00AD11AE /* phSubmission.m in Sources */,
 				F65084D31735B5ED00D93C90 /* phdetailsViewController.m in Sources */,
+				502D8D981735C1CF00AD11AE /* NSString+URLEncoding.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
