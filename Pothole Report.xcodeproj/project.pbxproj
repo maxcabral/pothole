@@ -23,6 +23,7 @@
 		50CEC73A1735936D007ADC0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7151735936D007ADC0B /* Foundation.framework */; };
 		50CEC7421735936D007ADC0B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50CEC7401735936D007ADC0B /* InfoPlist.strings */; };
 		50CEC7451735936D007ADC0B /* Pothole_ReportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CEC7441735936D007ADC0B /* Pothole_ReportTests.m */; };
+		F65084D01735A2C700D93C90 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F65084CF1735A2C700D93C90 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		50CEC7411735936D007ADC0B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		50CEC7431735936D007ADC0B /* Pothole_ReportTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pothole_ReportTests.h; sourceTree = "<group>"; };
 		50CEC7441735936D007ADC0B /* Pothole_ReportTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pothole_ReportTests.m; sourceTree = "<group>"; };
+		F65084CF1735A2C700D93C90 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F65084D01735A2C700D93C90 /* CoreLocation.framework in Frameworks */,
 				50CEC7141735936D007ADC0B /* UIKit.framework in Frameworks */,
 				50CEC7161735936D007ADC0B /* Foundation.framework in Frameworks */,
 				50CEC7181735936D007ADC0B /* CoreGraphics.framework in Frameworks */,
@@ -87,6 +90,7 @@
 		50CEC7071735936D007ADC0B = {
 			isa = PBXGroup;
 			children = (
+				F65084CF1735A2C700D93C90 /* CoreLocation.framework */,
 				50CEC7191735936D007ADC0B /* Pothole Report */,
 				50CEC73D1735936D007ADC0B /* Pothole ReportTests */,
 				50CEC7121735936D007ADC0B /* Frameworks */,
@@ -454,6 +458,7 @@
 				50CEC74A1735936D007ADC0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		50CEC74B1735936D007ADC0B /* Build configuration list for PBXNativeTarget "Pothole ReportTests" */ = {
 			isa = XCConfigurationList;
@@ -462,6 +467,7 @@
 				50CEC74D1735936D007ADC0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

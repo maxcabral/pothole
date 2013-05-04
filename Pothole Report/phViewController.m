@@ -8,22 +8,28 @@
 
 #import "phViewController.h"
 
-@interface phViewController ()
-
-@end
-
-@implementation phViewController
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+@implementation phViewController {
+    CLLocationManager *locationManager;
 }
 
-- (void)didReceiveMemoryWarning
+@synthesize latitudeLabel;
+@synthesize longitudeLabel;
+@synthesize addressLabel;
+@synthesize tagButton;
+
+
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    if ((self = [super initWithCoder:aDecoder])) {
+        locationManager = [[CLLocationManager alloc] init];
+    }
+    return self;
 }
 
 @end

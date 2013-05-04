@@ -1,18 +1,99 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2519" systemVersion="12A206j" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G56" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1856"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--Ph View Controller-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="phViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n92-GU-aMj">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Pothole Here">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Potholes in Los Angeles" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncc-7K-5BW">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="PH Location GPS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kR-Au-a3U">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Latitude" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="om0-Ge-pIr">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="61" id="085-av-EMU"/>
+                                    <constraint firstAttribute="height" constant="21" id="Nwk-et-fx8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Longitude" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIq-XL-qkq">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="QLJ-eL-spb"/>
+                                    <constraint firstAttribute="width" constant="75" id="u2A-Rg-55h"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="(Latitude goes here)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7d-Qd-1lN">
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="(Longitude goes here)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZt-eE-dus">
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="(address goes here)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Voj-vU-f5S">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2kR-Au-a3U" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="35" id="2QW-nf-dSR"/>
+                            <constraint firstItem="JIq-XL-qkq" firstAttribute="top" secondItem="3" secondAttribute="top" constant="208" id="34H-ZE-dk4"/>
+                            <constraint firstItem="zZt-eE-dus" firstAttribute="leading" secondItem="Q7d-Qd-1lN" secondAttribute="leading" type="default" id="6n7-Ox-owi"/>
+                            <constraint firstItem="Q7d-Qd-1lN" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="152" id="A6I-P7-RYe"/>
+                            <constraint firstItem="Voj-vU-f5S" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="45" id="NLt-PA-Fbs"/>
+                            <constraint firstItem="om0-Ge-pIr" firstAttribute="leading" secondItem="2kR-Au-a3U" secondAttribute="leading" type="default" id="OC9-Xm-AKJ"/>
+                            <constraint firstItem="n92-GU-aMj" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="Oog-Tc-Ibl"/>
+                            <constraint firstItem="zZt-eE-dus" firstAttribute="top" secondItem="JIq-XL-qkq" secondAttribute="top" type="default" id="T2x-gj-LhB"/>
+                            <constraint firstItem="zZt-eE-dus" firstAttribute="baseline" secondItem="JIq-XL-qkq" secondAttribute="baseline" type="default" id="aSA-Uj-FA5"/>
+                            <constraint firstItem="ncc-7K-5BW" firstAttribute="centerX" secondItem="n92-GU-aMj" secondAttribute="centerX" type="default" id="bxE-e6-YVM"/>
+                            <constraint firstItem="om0-Ge-pIr" firstAttribute="top" secondItem="3" secondAttribute="top" constant="169" id="fpY-wd-9hI"/>
+                            <constraint firstItem="ncc-7K-5BW" firstAttribute="top" secondItem="3" secondAttribute="top" constant="31" id="gwj-Ye-RVV"/>
+                            <constraint firstItem="Q7d-Qd-1lN" firstAttribute="baseline" secondItem="om0-Ge-pIr" secondAttribute="baseline" type="default" id="h4C-iv-wqs"/>
+                            <constraint firstItem="Q7d-Qd-1lN" firstAttribute="top" secondItem="om0-Ge-pIr" secondAttribute="top" type="default" id="jrm-CX-RQO"/>
+                            <constraint firstAttribute="bottom" secondItem="Voj-vU-f5S" secondAttribute="bottom" constant="201" id="tSh-mp-q6m"/>
+                            <constraint firstItem="JIq-XL-qkq" firstAttribute="leading" secondItem="om0-Ge-pIr" secondAttribute="leading" type="default" id="uFr-ZR-MZK"/>
+                            <constraint firstAttribute="bottom" secondItem="n92-GU-aMj" secondAttribute="bottom" constant="93" id="uro-7L-hk3"/>
+                            <constraint firstItem="2kR-Au-a3U" firstAttribute="top" secondItem="3" secondAttribute="top" constant="103" id="ut6-Ti-63S"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="Voj-vU-f5S" id="blt-qU-Yb2"/>
+                        <outlet property="latitudeLabel" destination="Q7d-Qd-1lN" id="gW2-Yw-lAK"/>
+                        <outlet property="longitudeLabel" destination="zZt-eE-dus" id="Lsh-SM-BwK"/>
+                        <outlet property="tagButton" destination="n92-GU-aMj" id="pXf-OY-oYN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
