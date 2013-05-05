@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G56" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="6tn-hU-dHC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="6tn-hU-dHC">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -127,12 +127,11 @@
                     <tabBarItem key="tabBarItem" title="Map" id="UDE-8k-fzq"/>
                     <connections>
                         <outlet property="mapView" destination="J2J-ah-UVG" id="ifN-8C-eiY"/>
-                        <segue destination="vCF-Ve-cjk" kind="modal" identifier="EditLocation" id="nnm-BL-alp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QGJ-fA-9hH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-687" y="1834"/>
+            <point key="canvasLocation" x="-1415" y="1734"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="zHw-bU-w9c">
@@ -163,8 +162,8 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="n92-GU-aMj">
-                                <rect key="frame" x="29" y="59" width="263" height="244"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="29" y="70" width="263" height="244"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Pothole!">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -440,6 +439,8 @@
             <point key="canvasLocation" x="103" y="799"/>
         </scene>
     </scenes>
+<<<<<<< HEAD
+=======
     <classes>
         <class className="HolesViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HolesViewController.h"/>
@@ -449,14 +450,6 @@
             <relationships>
                 <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="MapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="showLocations"/>
-                <relationship kind="action" name="showUser"/>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
             </relationships>
         </class>
         <class className="phViewController" superclassName="UIViewController">
@@ -484,12 +477,17 @@
             </relationships>
         </class>
     </classes>
+>>>>>>> c10f7902da7c9c847265c6ff97c09830162af7a6
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="nnm-BL-alp"/>
+<<<<<<< HEAD
+        <segue reference="pUu-ql-ivk"/>
+=======
+        <segue reference="04b-Ys-NKy"/>
+>>>>>>> c10f7902da7c9c847265c6ff97c09830162af7a6
     </inferredMetricsTieBreakers>
 </document>
