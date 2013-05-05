@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		501FABAC1735DDF500E5AF69 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501FABAB1735DDF500E5AF69 /* CoreData.framework */; };
+		501FABAD1735DE8900E5AF69 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 502D8D971735C1CF00AD11AE /* NSString+URLEncoding.m */; };
 		502D8D5E1735A7FE00AD11AE /* phLosAngelesSubmission.m in Sources */ = {isa = PBXBuildFile; fileRef = 502D8D5B1735A7FE00AD11AE /* phLosAngelesSubmission.m */; };
 		502D8D5F1735A7FE00AD11AE /* phSubmission.m in Sources */ = {isa = PBXBuildFile; fileRef = 502D8D5D1735A7FE00AD11AE /* phSubmission.m */; };
-		502D8D981735C1CF00AD11AE /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 502D8D971735C1CF00AD11AE /* NSString+URLEncoding.m */; };
 		50CEC7141735936D007ADC0B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7131735936D007ADC0B /* UIKit.framework */; };
 		50CEC7161735936D007ADC0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7151735936D007ADC0B /* Foundation.framework */; };
 		50CEC7181735936D007ADC0B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7171735936D007ADC0B /* CoreGraphics.framework */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		501FABAB1735DDF500E5AF69 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		502D8D5A1735A7FE00AD11AE /* phLosAngelesSubmission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = phLosAngelesSubmission.h; sourceTree = "<group>"; };
 		502D8D5B1735A7FE00AD11AE /* phLosAngelesSubmission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = phLosAngelesSubmission.m; sourceTree = "<group>"; };
 		502D8D5C1735A7FE00AD11AE /* phSubmission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = phSubmission.h; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				501FABAC1735DDF500E5AF69 /* CoreData.framework in Frameworks */,
 				F65084D01735A2C700D93C90 /* CoreLocation.framework in Frameworks */,
 				50CEC7141735936D007ADC0B /* UIKit.framework in Frameworks */,
 				50CEC7161735936D007ADC0B /* Foundation.framework in Frameworks */,
@@ -121,6 +124,7 @@
 		50CEC7071735936D007ADC0B = {
 			isa = PBXGroup;
 			children = (
+				501FABAB1735DDF500E5AF69 /* CoreData.framework */,
 				F67DD7D21735DA990003BFE1 /* Location.h */,
 				F67DD7D31735DA990003BFE1 /* Location.m */,
 				F65084D71735D82200D93C90 /* DataModel.xcdatamodeld */,
@@ -316,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				501FABAD1735DE8900E5AF69 /* NSString+URLEncoding.m in Sources */,
 				50CEC7201735936D007ADC0B /* main.m in Sources */,
 				50CEC7241735936D007ADC0B /* phAppDelegate.m in Sources */,
 				50CEC7301735936D007ADC0B /* phViewController.m in Sources */,
