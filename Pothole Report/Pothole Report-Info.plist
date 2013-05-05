@@ -13,10 +13,7 @@
 		<key>CFBundlePrimaryIcon</key>
 		<dict>
 			<key>CFBundleIconFiles</key>
-			<array>
-				<string>app_icon_iphone.png</string>
-				<string>app_icon_iphone5_or_HighResIphone.png</string>
-			</array>
+			<array/>
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>

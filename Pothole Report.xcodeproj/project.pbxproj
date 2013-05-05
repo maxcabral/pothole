@@ -26,9 +26,6 @@
 		50CEC71E1735936D007ADC0B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50CEC71C1735936D007ADC0B /* InfoPlist.strings */; };
 		50CEC7201735936D007ADC0B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CEC71F1735936D007ADC0B /* main.m */; };
 		50CEC7241735936D007ADC0B /* phAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CEC7231735936D007ADC0B /* phAppDelegate.m */; };
-		50CEC7261735936D007ADC0B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 50CEC7251735936D007ADC0B /* Default.png */; };
-		50CEC7281735936D007ADC0B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50CEC7271735936D007ADC0B /* Default@2x.png */; };
-		50CEC72A1735936D007ADC0B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50CEC7291735936D007ADC0B /* Default-568h@2x.png */; };
 		50CEC72D1735936D007ADC0B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50CEC72B1735936D007ADC0B /* MainStoryboard.storyboard */; };
 		50CEC7381735936D007ADC0B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7371735936D007ADC0B /* SenTestingKit.framework */; };
 		50CEC7391735936D007ADC0B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7131735936D007ADC0B /* UIKit.framework */; };
@@ -86,9 +83,6 @@
 		50CEC7211735936D007ADC0B /* Pothole Report-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pothole Report-Prefix.pch"; sourceTree = "<group>"; };
 		50CEC7221735936D007ADC0B /* phAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = phAppDelegate.h; sourceTree = "<group>"; };
 		50CEC7231735936D007ADC0B /* phAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = phAppDelegate.m; sourceTree = "<group>"; };
-		50CEC7251735936D007ADC0B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		50CEC7271735936D007ADC0B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		50CEC7291735936D007ADC0B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		50CEC72C1735936D007ADC0B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		50CEC7361735936D007ADC0B /* Pothole ReportTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pothole ReportTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CEC7371735936D007ADC0B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -224,9 +218,6 @@
 				50CEC71C1735936D007ADC0B /* InfoPlist.strings */,
 				50CEC71F1735936D007ADC0B /* main.m */,
 				50CEC7211735936D007ADC0B /* Pothole Report-Prefix.pch */,
-				50CEC7251735936D007ADC0B /* Default.png */,
-				50CEC7271735936D007ADC0B /* Default@2x.png */,
-				50CEC7291735936D007ADC0B /* Default-568h@2x.png */,
 				502D8D961735C16900AD11AE /* NSString+URLEncoding.h */,
 				502D8D971735C1CF00AD11AE /* NSString+URLEncoding.m */,
 			);
@@ -325,9 +316,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				50CEC71E1735936D007ADC0B /* InfoPlist.strings in Resources */,
-				50CEC7261735936D007ADC0B /* Default.png in Resources */,
-				50CEC7281735936D007ADC0B /* Default@2x.png in Resources */,
-				50CEC72A1735936D007ADC0B /* Default-568h@2x.png in Resources */,
 				50CEC72D1735936D007ADC0B /* MainStoryboard.storyboard in Resources */,
 				503A92011736E1DD009FE49D /* app_icon_iphone.png in Resources */,
 				503A92031736E1E1009FE49D /* app_icon_iphone5_or_HighResIphone.png in Resources */,
