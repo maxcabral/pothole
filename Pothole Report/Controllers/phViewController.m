@@ -11,6 +11,7 @@
 #import "phdetailsViewController.h"
 #import "MBProgressHUD.h"
 #import <MessageUI/MessageUI.h>
+#import "phLocation.h"
 
 
 @interface phViewController()
@@ -52,7 +53,6 @@
     if (!updatingLocation) {
         hudView = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hudView.labelText = @"Processing";
-        
 
         self.addressLabel.text = @"Searching for Address...";
         location = nil;
@@ -64,7 +64,6 @@
     }
     
     [self updateLabels];
-    /*[laSubmission submitWithName:@"Test" Address:@"100 Main St" Phone:@"8001234567" Email:@"test@example.com" Description:@"Please Ignore" Comment:@"This is a test" AndLocation:@"Los Angeles"];*/
 }
 
 
@@ -100,6 +99,17 @@
         }
         
     }
+}
+
+- (void)savePothole
+{
+    phLocation *potholeLocation = [NSEntityDescription insertNewObjectForEntityForName:@"Location" inManagedObjectContext:self.managedObjectContext];
+
+    potholeLocation.locationDescription = [self stringFromPlacemark:placemark];
+    potholeLocation.latitude = [NSNumber numberWithDouble:location.coordinate.latitude];
+    potholeLocation.longitude = [NSNumber numberWithDouble:location.coordinate.longitude];
+    potholeLocation.date = [NSDate date];
+    potholeLocation.placemark = placemark;
 }
 
 - (void)startLocationManager

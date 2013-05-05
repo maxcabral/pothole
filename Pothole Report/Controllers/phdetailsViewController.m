@@ -10,13 +10,12 @@
 #import "MBProgressHUD.h"
 #import "phViewController.h"
 #import "phdetailsViewController.h"
-#import "Location.h"
+#import "phLocation.h"
 
 @interface phdetailsViewController () {
     NSString *descriptionText;
     NSDate *date;
 }
-
 @end
 
 @implementation phdetailsViewController 
@@ -63,7 +62,7 @@
     MBProgressHUD *hudView = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
     [hudView setMode:MBProgressHUDModeText];
     
-    Location *location = nil;
+    phLocation *location = nil;
     
     if (self.locationToEdit !=nil) {
         hudView.labelText = @"Updated";
@@ -148,7 +147,7 @@
 
 }
 
-- (void)setLocationToEdit:(Location *)newLocationToEdit
+- (void)setLocationToEdit:(phLocation *)newLocationToEdit
 {
     if (locationToEdit != newLocationToEdit) {
         locationToEdit = newLocationToEdit;
