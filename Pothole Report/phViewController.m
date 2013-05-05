@@ -29,7 +29,7 @@
     phLosAngelesSubmission *laSubmission;
 }
 
-@synthesize latitudeLabel, longitudeLabel, addressLabel, tagButton, emailButton;
+@synthesize latitudeLabel, longitudeLabel, addressLabel, tagButton, emailButton, managedObjectContext;
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
