@@ -84,4 +84,12 @@
     locations = foundObjects;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"EditLocation"]) {
+        UINavigationController *navigationController = segue.destinationViewController;
+        HolesViewController
+    }
+}
+
 @end

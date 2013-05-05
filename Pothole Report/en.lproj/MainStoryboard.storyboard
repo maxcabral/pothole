@@ -82,10 +82,28 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="The Holes" id="oLM-8s-IFv"/>
+                    <connections>
+                        <segue destination="vCF-Ve-cjk" kind="modal" identifier="EditLocation" id="fDh-j3-EQq"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lZV-7B-Ozs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-599" y="967"/>
+        </scene>
+        <!--View Controller - Map-->
+        <scene sceneID="cFm-ce-rUh">
+            <objects>
+                <viewController id="ZvA-nm-hJ4" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yoh-RH-oT4">
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Map" id="UDE-8k-fzq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QGJ-fA-9hH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1591" y="1690"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="zHw-bU-w9c">
@@ -100,6 +118,7 @@
                     <connections>
                         <segue destination="h4f-Wh-6lT" kind="relationship" relationship="viewControllers" id="xxT-1q-hX6"/>
                         <segue destination="QFD-Oy-k2u" kind="relationship" relationship="viewControllers" id="bNP-is-hnf"/>
+                        <segue destination="ZvA-nm-hJ4" kind="relationship" relationship="viewControllers" id="Nem-JG-llO"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PiZ-41-aM8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -471,4 +490,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="fDh-j3-EQq"/>
+    </inferredMetricsTieBreakers>
 </document>
