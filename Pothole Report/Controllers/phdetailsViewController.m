@@ -57,8 +57,6 @@
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
-
-
 - (IBAction)done:(id)sender
 {
     HudView *hudView = [HudView hudInView:self.navigationController.view animated:YES];
@@ -83,6 +81,7 @@
 
 - (IBAction)cancel:(id)sender
 {
+    [self closeScreen];
 }
 
 - (NSString *)stringFromPlacemark:(CLPlacemark *)thePlacemark
