@@ -26,6 +26,9 @@
 		5095B82F1736FA970044AC21 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 5095B82E1736FA970044AC21 /* button.png */; };
 		5095B8311736FB540044AC21 /* button_onclick.png in Resources */ = {isa = PBXBuildFile; fileRef = 5095B8301736FB540044AC21 /* button_onclick.png */; };
 		5095B833173701810044AC21 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 5095B832173701810044AC21 /* background.png */; };
+		5095B83517370D000044AC21 /* spot_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5095B83417370D000044AC21 /* spot_icon.png */; };
+		5095B83717370D290044AC21 /* map_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5095B83617370D290044AC21 /* map_icon.png */; };
+		5095B83917370D400044AC21 /* list_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5095B83817370D400044AC21 /* list_icon.png */; };
 		50CEC7141735936D007ADC0B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7131735936D007ADC0B /* UIKit.framework */; };
 		50CEC7161735936D007ADC0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7151735936D007ADC0B /* Foundation.framework */; };
 		50CEC7181735936D007ADC0B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7171735936D007ADC0B /* CoreGraphics.framework */; };
@@ -82,6 +85,9 @@
 		5095B82E1736FA970044AC21 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button.png; path = "Pothole Images/button.png"; sourceTree = "<group>"; };
 		5095B8301736FB540044AC21 /* button_onclick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_onclick.png; path = "Pothole Images/button_onclick.png"; sourceTree = "<group>"; };
 		5095B832173701810044AC21 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = "Pothole Images/background.png"; sourceTree = "<group>"; };
+		5095B83417370D000044AC21 /* spot_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spot_icon.png; path = "Pothole Images/spot_icon.png"; sourceTree = "<group>"; };
+		5095B83617370D290044AC21 /* map_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = map_icon.png; path = "Pothole Images/map_icon.png"; sourceTree = "<group>"; };
+		5095B83817370D400044AC21 /* list_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = list_icon.png; path = "Pothole Images/list_icon.png"; sourceTree = "<group>"; };
 		50CEC7101735936D007ADC0B /* iSpotHoles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSpotHoles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CEC7131735936D007ADC0B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		50CEC7151735936D007ADC0B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -165,6 +171,9 @@
 		5095B82D1736FA8C0044AC21 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				5095B83817370D400044AC21 /* list_icon.png */,
+				5095B83617370D290044AC21 /* map_icon.png */,
+				5095B83417370D000044AC21 /* spot_icon.png */,
 				5095B832173701810044AC21 /* background.png */,
 				5095B8301736FB540044AC21 /* button_onclick.png */,
 				5095B82E1736FA970044AC21 /* button.png */,
@@ -345,6 +354,9 @@
 				5095B82F1736FA970044AC21 /* button.png in Resources */,
 				5095B8311736FB540044AC21 /* button_onclick.png in Resources */,
 				5095B833173701810044AC21 /* background.png in Resources */,
+				5095B83517370D000044AC21 /* spot_icon.png in Resources */,
+				5095B83717370D290044AC21 /* map_icon.png in Resources */,
+				5095B83917370D400044AC21 /* list_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

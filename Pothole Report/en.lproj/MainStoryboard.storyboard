@@ -8,7 +8,7 @@
         <scene sceneID="eKq-Zp-CoS">
             <objects>
                 <navigationController definesPresentationContext="YES" id="h4f-Wh-6lT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="SPOT!" id="HIR-5U-2cJ"/>
+                    <tabBarItem key="tabBarItem" title="SPOT!" image="spot_icon.png" id="HIR-5U-2cJ"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -28,7 +28,7 @@
         <scene sceneID="kBK-1l-7EL">
             <objects>
                 <navigationController definesPresentationContext="YES" id="QFD-Oy-k2u" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="History" id="VSd-DW-sAg"/>
+                    <tabBarItem key="tabBarItem" title="History" image="list_icon.png" id="VSd-DW-sAg"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="tbW-Qe-TeD">
@@ -130,7 +130,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" id="UDE-8k-fzq"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="map_icon.png" id="UDE-8k-fzq"/>
                     <connections>
                         <outlet property="mapView" destination="J2J-ah-UVG" id="ifN-8C-eiY"/>
                         <segue destination="vCF-Ve-cjk" kind="modal" identifier="EditLocation" id="nnm-BL-alp"/>
@@ -455,6 +455,9 @@
     <resources>
         <image name="button.png" width="259" height="272"/>
         <image name="button_onclick.png" width="258" height="260"/>
+        <image name="list_icon.png" width="30" height="30"/>
+        <image name="map_icon.png" width="30" height="30"/>
+        <image name="spot_icon.png" width="30" height="30"/>
     </resources>
     <classes>
         <class className="HolesViewController" superclassName="UITableViewController">
@@ -506,6 +509,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="04b-Ys-NKy"/>
+        <segue reference="nnm-BL-alp"/>
     </inferredMetricsTieBreakers>
 </document>
