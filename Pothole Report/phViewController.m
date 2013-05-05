@@ -29,7 +29,7 @@
     phLosAngelesSubmission *laSubmission;
 }
 
-@synthesize latitudeLabel, longitudeLabel, addressLabel, tagButton, emailButton, managedObjectContext;
+@synthesize addressLabel, tagButton, emailButton, managedObjectContext;
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -77,9 +77,6 @@
 - (void)updateLabels
 {
     if (location != nil) {
-
-        self.latitudeLabel.text = [NSString stringWithFormat:@"%.8f", location.coordinate.latitude];
-        self.longitudeLabel.text = [NSString stringWithFormat:@"%.8f", location.coordinate.longitude];
         
         if (placemark !=nil) {
             self.addressLabel.text = [self stringFromPlacemark:placemark];
@@ -277,6 +274,38 @@
     
     // Close the Mail Interface
     [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+@end
+
+@interface phViewController (UISwitchControllerDelegate)
+{
+    
+}
+@end
+
+@implementation phViewController (UISwitchControllerDelegate)
+
+- (IBAction)drivingSwitchValueChanged:(UISwitch *)sender {
+    if (sender.on){
+        [self disableControls];
+    } else {
+        [self enableControls];
+    }
+}
+
+- (void)disableControls
+{
+    [self.tagButton setEnabled:NO];
+    [self.emailButton setEnabled:NO];
+    [self.tabBarController.tabBar setUserInteractionEnabled:NO];
+}
+
+- (void)enableControls
+{
+    [self.tagButton setEnabled:YES];
+    [self.emailButton setEnabled:YES];
+    [self.tabBarController.tabBar setUserInteractionEnabled:YES];
 }
 
 @end
