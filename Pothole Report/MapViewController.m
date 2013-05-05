@@ -7,6 +7,8 @@
 //
 
 #import "MapViewController.h"
+#import "Location.h"
+#import "phdetailsViewController.h"
 
 @implementation MapViewController {
     NSArray *locations;
@@ -15,11 +17,7 @@
 @synthesize managedObjectContext;
 @synthesize mapView;
 
-- (IBAction)showUser
-{
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(self.mapView.userLocation.coordinate, 1000, 1000);
-    [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
-}
+
 
 - (MKCoordinateRegion)regionForAnnotations:(NSArray *)annotations
 {
@@ -58,10 +56,21 @@
     return [self.mapView regionThatFits:region];
 }
 
+- (IBAction)showUser
+{
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(self.mapView.userLocation.coordinate, 1000, 1000);
+    [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
+}
+
 - (IBAction)showLocations
 {
     MKCoordinateRegion region = [self regionForAnnotations:locations];
     [self.mapView setRegion:region animated:YES];
+}
+
+- (void)showLocationDetails:(UIButton *)button
+{
+    [self performSegueWithIdentifier:@"EditLocation" sender:button];
 }
 
 - (void)updateLocations
@@ -94,6 +103,75 @@
     if ([locations count] > 0 ) {
         [self showLocations];
     }
+}
+
+#pragma mark - MKMapViewDelegate
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    if ([annotation isKindOfClass:[Location class]]) {
+        
+        static NSString *identifier = @"Location";
+        MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+        if (annotationView == nil) {
+            annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+            annotationView.enabled = YES;
+            annotationView.canShowCallout = YES;
+            annotationView.animatesDrop = NO;
+            annotationView.pinColor = MKPinAnnotationColorGreen;
+            
+            UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+            [rightButton addTarget:self action:@selector(showLocationDetails:) forControlEvents:UIControlEventTouchUpInside];
+            annotationView.rightCalloutAccessoryView = rightButton;
+        } else {
+            annotationView.annotation = annotation;
+        }
+        
+        UIButton *button = (UIButton *)annotationView.rightCalloutAccessoryView;
+        button.tag = [locations indexOfObject:(Location *)annotation];
+        
+        return annotationView;
+    }
+    
+    return nil;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"EditLocation"]) {
+        UINavigationController *navigationController = segue.destinationViewController;
+        phdetailsViewController *controller = (phdetailsViewController *)navigationController.topViewController;
+        controller.managedObjectContext = self.managedObjectContext;
+        
+        Location *location = [locations objectAtIndex:((UIButton *)sender).tag];
+        controller.locationToEdit = location;
+    }
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    if ((self = [super initWithCoder:aDecoder]))
+    {
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(contextDidChange:)
+                                                     name:NSManagedObjectContextObjectsDidChangeNotification
+                                                   object:self.managedObjectContext];
+    }
+    return self;
+}
+
+- (void)contextDidChange:(NSNotification *)notification
+{
+    if ([self isViewLoaded]) {
+        [self updateLocations];
+    }
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:NSManagedObjectContextObjectsDidChangeNotification
+                                                  object:self.managedObjectContext];
 }
 
 @end
