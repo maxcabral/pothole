@@ -29,6 +29,7 @@
 @synthesize coordinate;
 @synthesize placemark;
 @synthesize managedObjectContext;
+@synthesize locationToEdit;
 
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -62,9 +63,16 @@
 - (IBAction)done:(id)sender
 {
     HudView *hudView = [HudView hudInView:self.navigationController.view animated:YES];
-    hudView.text = @"Tagged";
+
+    Location *location = nil;
     
-    Location *location = [NSEntityDescription insertNewObjectForEntityForName:@"Location" inManagedObjectContext:self.managedObjectContext];
+    if (self.locationToEdit !=nil) {
+        hudView.text = @"Updated";
+        location = self.locationToEdit;
+    } else {
+        hudView.text = @"Tagged";
+        location = [NSEntityDescription insertNewObjectForEntityForName:@"Location" inManagedObjectContext:self.managedObjectContext];
+    }
     
     location.locationDescription = descriptionText;
     location.latitude = [NSNumber numberWithDouble:self.coordinate.latitude];
@@ -109,6 +117,14 @@
 {
     [super viewDidLoad];
     
+    if (self.locationToEdit != nil) {
+        self.title = @"Edit Location";
+        
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                                               target:self
+                                                                                               action:@selector(done:)];
+    }
+    
     self.descriptionTextView.text = descriptionText;
     self.dateLabel.text = [self formatDate:date];
 
@@ -132,7 +148,17 @@
 
 }
 
-
+- (void)setLocationToEdit:(Location *)newLocationToEdit
+{
+    if (locationToEdit != newLocationToEdit) {
+        locationToEdit = newLocationToEdit;
+        
+        descriptionText = locationToEdit.locationDescription;
+        self.coordinate = CLLocationCoordinate2DMake([locationToEdit.latitude doubleValue], [locationToEdit.longitude doubleValue]);
+        self.placemark = locationToEdit.placemark;
+        date = locationToEdit.date;
+    }
+}
 
 #pragma mark - UITableViewDelegate
 

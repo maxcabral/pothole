@@ -9,6 +9,7 @@
 #import "phAppDelegate.h"
 #import "phViewController.h"
 #import "HolesViewController.h"
+#import "MapViewController.h"
 
 @interface phAppDelegate ()
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
@@ -31,6 +32,8 @@
     navigationController = (UINavigationController *)[[tabBarController viewControllers] objectAtIndex:1];
     HolesViewController *locationsViewController = (HolesViewController *)[[navigationController viewControllers] objectAtIndex:0];
     locationsViewController.managedObjectContext = self.managedObjectContext;
+    MapViewController *mapViewController = (MapViewController *)[[tabBarController viewControllers] objectAtIndex:2];
+    mapViewController.managedObjectContext = self.managedObjectContext;
     
 
     

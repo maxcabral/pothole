@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class Location;
+
 @interface phdetailsViewController : UITableViewController <UITextViewDelegate>
 @property (nonatomic, strong) IBOutlet UITextView *descriptionTextView;
 
@@ -18,6 +20,8 @@
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;
 @property (nonatomic, strong) CLPlacemark *placemark;
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+
+@property (nonatomic, strong) Location *locationToEdit;
 
 
 - (IBAction)done:(id)sender;

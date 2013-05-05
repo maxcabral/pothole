@@ -73,6 +73,7 @@
                                 <connections>
                                     <outlet property="addressLabel" destination="k0R-Jv-RfV" id="anh-XC-vUM"/>
                                     <outlet property="descriptionLabel" destination="PLJ-Gm-84B" id="BsT-Y7-ty2"/>
+                                    <segue destination="vCF-Ve-cjk" kind="modal" identifier="EditLocation" id="pUu-ql-ivk"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -82,28 +83,55 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="The Holes" id="oLM-8s-IFv"/>
-                    <connections>
-                        <segue destination="vCF-Ve-cjk" kind="modal" identifier="EditLocation" id="fDh-j3-EQq"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lZV-7B-Ozs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-599" y="967"/>
         </scene>
-        <!--View Controller - Map-->
+        <!--Map View Controller - Map-->
         <scene sceneID="cFm-ce-rUh">
             <objects>
-                <viewController id="ZvA-nm-hJ4" sceneMemberID="viewController">
+                <viewController id="ZvA-nm-hJ4" customClass="MapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yoh-RH-oT4">
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" id="f0m-ZT-b8a">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Map" id="eUW-xg-B6s">
+                                        <barButtonItem key="leftBarButtonItem" title="Holes" id="O75-2L-DZW">
+                                            <connections>
+                                                <action selector="showLocations" destination="ZvA-nm-hJ4" id="sBu-yi-1nv"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Me" id="2WQ-Ya-s4v">
+                                            <connections>
+                                                <action selector="showUser" destination="ZvA-nm-hJ4" id="KLc-Vz-Ag2"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" id="J2J-ah-UVG">
+                                <rect key="frame" x="0.0" y="44" width="320" height="455"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ZvA-nm-hJ4" id="cDq-pE-TuP"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" id="UDE-8k-fzq"/>
+                    <connections>
+                        <outlet property="mapView" destination="J2J-ah-UVG" id="ifN-8C-eiY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QGJ-fA-9hH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1591" y="1690"/>
+            <point key="canvasLocation" x="-1415" y="1734"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="zHw-bU-w9c">
@@ -422,49 +450,15 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QN5-9a-NQM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="171" y="171"/>
+            <point key="canvasLocation" x="103" y="799"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="HolesViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HolesViewController.h"/>
-        </class>
-        <class className="LocationCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LocationCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="phViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/phViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="getphLocation:"/>
-                <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="emailButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="getButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="tagButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="phdetailsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/phdetailsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-                <relationship kind="action" name="done:"/>
-                <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="descriptionTextView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="latitudeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="longitudeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="fDh-j3-EQq"/>
+        <segue reference="pUu-ql-ivk"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -17,5 +17,5 @@ NSLog(@"*** Fatal error in %s:%d\n%@\n%@", __FILE__, __LINE__, error, [error use
     #import <Foundation/Foundation.h>
     #import <CoreLocation/CoreLocation.h>
     #import <CoreData/CoreData.h>
-
+    #import <MapKit/MapKit.h>
 #endif

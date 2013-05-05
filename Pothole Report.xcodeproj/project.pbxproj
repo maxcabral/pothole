@@ -34,7 +34,9 @@
 		F65084D91735D82200D93C90 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F65084D71735D82200D93C90 /* DataModel.xcdatamodeld */; };
 		F665E0C41735F65E0081F40A /* HolesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F665E0C31735F65E0081F40A /* HolesViewController.m */; };
 		F665E0C71735FBE40081F40A /* LocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F665E0C61735FBE40081F40A /* LocationCell.m */; };
+		F665E0C917364AE90081F40A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F665E0C817364AE90081F40A /* MapKit.framework */; };
 		F67DD7D41735DA990003BFE1 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = F67DD7D31735DA990003BFE1 /* Location.m */; };
+		F6FB10C917365499009BD515 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FB10C817365499009BD515 /* MapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,8 +90,11 @@
 		F665E0C31735F65E0081F40A /* HolesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HolesViewController.m; sourceTree = "<group>"; };
 		F665E0C51735FBE40081F40A /* LocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationCell.h; sourceTree = "<group>"; };
 		F665E0C61735FBE40081F40A /* LocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationCell.m; sourceTree = "<group>"; };
+		F665E0C817364AE90081F40A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F67DD7D21735DA990003BFE1 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		F67DD7D31735DA990003BFE1 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		F6FB10C717365499009BD515 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		F6FB10C817365499009BD515 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F665E0C917364AE90081F40A /* MapKit.framework in Frameworks */,
 				501FABBB1735E6B000E5AF69 /* MessageUI.framework in Frameworks */,
 				501FABAC1735DDF500E5AF69 /* CoreData.framework in Frameworks */,
 				F65084D01735A2C700D93C90 /* CoreLocation.framework in Frameworks */,
@@ -133,6 +139,7 @@
 		50CEC7071735936D007ADC0B = {
 			isa = PBXGroup;
 			children = (
+				F665E0C817364AE90081F40A /* MapKit.framework */,
 				501FABBA1735E6B000E5AF69 /* MessageUI.framework */,
 				501FABAB1735DDF500E5AF69 /* CoreData.framework */,
 				F67DD7D21735DA990003BFE1 /* Location.h */,
@@ -175,6 +182,8 @@
 				F665E0C51735FBE40081F40A /* LocationCell.h */,
 				F665E0C61735FBE40081F40A /* LocationCell.m */,
 				50CEC72B1735936D007ADC0B /* MainStoryboard.storyboard */,
+				F6FB10C717365499009BD515 /* MapViewController.h */,
+				F6FB10C817365499009BD515 /* MapViewController.m */,
 				F665E0C21735F65E0081F40A /* HolesViewController.h */,
 				F665E0C31735F65E0081F40A /* HolesViewController.m */,
 				50CEC72E1735936D007ADC0B /* phViewController.h */,
@@ -346,6 +355,7 @@
 				F67DD7D41735DA990003BFE1 /* Location.m in Sources */,
 				F665E0C41735F65E0081F40A /* HolesViewController.m in Sources */,
 				F665E0C71735FBE40081F40A /* LocationCell.m in Sources */,
+				F6FB10C917365499009BD515 /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

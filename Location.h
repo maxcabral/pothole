@@ -10,7 +10,7 @@
 #import <CoreData/CoreData.h>
 
 
-@interface Location : NSManagedObject
+@interface Location : NSManagedObject <MKAnnotation>
 
 @property (nonatomic, retain) NSDate * date;
 @property (nonatomic, retain) NSNumber * latitude;

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HolesViewController : UITableViewController
+@interface HolesViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
