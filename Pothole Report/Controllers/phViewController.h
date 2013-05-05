@@ -11,9 +11,9 @@
 @interface phViewController : UIViewController <CLLocationManagerDelegate>
 
 @property (nonatomic, strong) IBOutlet UILabel *addressLabel;
-@property (nonatomic, strong) IBOutlet UIButton *tagButton;
+@property (nonatomic, strong) IBOutlet UIBarButtonItem *tagButton;
 @property (nonatomic, strong) IBOutlet UIButton *getButton;
-@property (nonatomic, strong) IBOutlet UIButton *emailButton;
+@property (nonatomic, strong) IBOutlet UIBarButtonItem *emailButton;
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
 - (IBAction)getphLocation:(id)sender;
