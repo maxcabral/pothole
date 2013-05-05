@@ -8,6 +8,8 @@
 
 #import "phViewController.h"
 #import "phLosAngelesSubmission.h"
+#import "phdetailsViewController.h"
+#import <MessageUI/MessageUI.h>
 
 @interface phViewController()
 
@@ -20,22 +22,34 @@
     CLLocation *location;
     BOOL updatingLocation;
     NSError *lastLocationError;
-<<<<<<< HEAD
     CLGeocoder *geocoder;
     CLPlacemark *placemark;
     BOOL performingReverseGeocoding;
     NSError *lastGeocodingError;
-=======
     phLosAngelesSubmission *laSubmission;
->>>>>>> d5e0d4fdfb91978c5f23f6be951704d9f404d266
 }
 
+<<<<<<< HEAD
+@synthesize latitudeLabel, longitudeLabel, addressLabel, tagButton, emailButton;
+=======
 @synthesize latitudeLabel;
 @synthesize longitudeLabel;
 @synthesize addressLabel;
 @synthesize tagButton;
+@synthesize managedObjectContext;
+>>>>>>> 5dde9e8687273aa389a9af67ba3a090646bc9f1d
 
-
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"TagPothole"]) {
+        UINavigationController *navigationController = segue.destinationViewController;
+        phdetailsViewController *controller = (phdetailsViewController *)navigationController.topViewController;
+        controller.managedObjectContext = self.managedObjectContext;
+        controller.coordinate = location.coordinate;
+        controller.placemark = placemark;
+        
+    }
+}
 
 - (IBAction)getphLocation:(id)sender
 
@@ -53,6 +67,7 @@
     
     [self updateLabels];
     [self configureGetButton];
+    /*[laSubmission submitWithName:@"Test" Address:@"100 Main St" Phone:@"8001234567" Email:@"test@example.com" Description:@"Please Ignore" Comment:@"This is a test" AndLocation:@"Los Angeles"];*/
 }
 
 
@@ -64,7 +79,7 @@
 - (void)configureGetButton
 {
     if (updatingLocation) {
-        [self.getButton setTitle:@"Stop" forState:UIControlStateNormal];
+        [self.getButton setTitle:@"POT HOLE" forState:UIControlStateNormal];
     } else {
         [self.getButton setTitle:@"POT HOLE!" forState:UIControlStateNormal];
     }
@@ -171,11 +186,17 @@
 {
     [super viewDidLoad];
     laSubmission = [[phLosAngelesSubmission alloc] init];
-    laSubmission.delegate = self;
+    laSubmission.delegate = (id)self;
     [self updateLabels];
     [self configureGetButton];
 }
 
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    self.emailButton.hidden = NO;
+}
 #pragma mark - CLLocationManagerDelegate
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
@@ -258,8 +279,6 @@
         }
     }
 }
-<<<<<<< HEAD
-=======
 
 @end
 
@@ -279,5 +298,55 @@
         NSLog(@"%@ - %@",key,[response objectForKey:key]);
     }
 }
->>>>>>> d5e0d4fdfb91978c5f23f6be951704d9f404d266
+@end
+
+@interface phViewController (EmailView)
+
+@end
+
+@implementation phViewController (EmailView)
+
+- (IBAction)showEmail:(id)sender {
+    // Email Subject
+    NSString *emailTitle = @"Test Email";
+    // Email Content
+    NSString *messageBody = @"iOS programming is so fun!";
+    // To address
+    NSArray *toRecipents = [NSArray arrayWithObject:@"max@maxcabral.com"];
+    
+    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+    mc.mailComposeDelegate = (id)self;
+    [mc setSubject:emailTitle];
+    [mc setMessageBody:messageBody isHTML:NO];
+    [mc setToRecipients:toRecipents];
+    
+    // Present mail view controller on screen
+    [self presentViewController:mc animated:YES completion:NULL];
+    
+}
+
+- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Mail cancelled");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Mail saved");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Mail sent");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
+            break;
+        default:
+            break;
+    }
+    
+    // Close the Mail Interface
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
 @end

@@ -10,9 +10,11 @@
 #import "HudView.h"
 #import "phViewController.h"
 #import "phdetailsViewController.h"
+#import "Location.h"
 
 @interface phdetailsViewController () {
     NSString *descriptionText;
+    NSDate *date;
 }
 
 @end
@@ -26,11 +28,14 @@
 @synthesize dateLabel;
 @synthesize coordinate;
 @synthesize placemark;
+@synthesize managedObjectContext;
+
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     if ((self = [super initWithCoder:aDecoder])) {
         descriptionText = @"";
+        date = [NSDate date];
     }
     return self;
 }
@@ -58,6 +63,20 @@
 {
     HudView *hudView = [HudView hudInView:self.navigationController.view animated:YES];
     hudView.text = @"Tagged";
+    
+    Location *location = [NSEntityDescription insertNewObjectForEntityForName:@"Location" inManagedObjectContext:self.managedObjectContext];
+    
+    location.locationDescription = descriptionText;
+    location.latitude = [NSNumber numberWithDouble:self.coordinate.latitude];
+    location.longitude = [NSNumber numberWithDouble:self.coordinate.longitude];
+    location.date = date;
+    location.placemark = self.placemark;
+    
+    NSError *error;
+    if (![self.managedObjectContext save:&error]) {
+        NSLog(@"Error: %@", error);
+        abort();
+    }
     
     [self performSelector:@selector(closeScreen) withObject:nil afterDelay:0.6];
 }
@@ -91,7 +110,7 @@
     [super viewDidLoad];
     
     self.descriptionTextView.text = descriptionText;
-
+    self.dateLabel.text = [self formatDate:date];
 
     
     self.latitudeLabel.text = [NSString stringWithFormat:@"%.8f", self.coordinate.latitude];
@@ -112,6 +131,8 @@
     [self.tableView addGestureRecognizer:gestureRecognizer];
 
 }
+
+
 
 #pragma mark - UITableViewDelegate
 

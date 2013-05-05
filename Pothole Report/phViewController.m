@@ -36,6 +36,7 @@
     if ([segue.identifier isEqualToString:@"TagPothole"]) {
         UINavigationController *navigationController = segue.destinationViewController;
         phdetailsViewController *controller = (phdetailsViewController *)navigationController.topViewController;
+        controller.managedObjectContext = self.managedObjectContext;
         controller.coordinate = location.coordinate;
         controller.placemark = placemark;
         

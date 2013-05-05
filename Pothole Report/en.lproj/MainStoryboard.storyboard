@@ -29,10 +29,43 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tbW-Qe-TeD">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="z53-Fc-mmc" kind="relationship" relationship="rootViewController" id="Jf6-1A-0o0"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnr-QF-Jlh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1431" y="967"/>
+        </scene>
+        <!--Holes View Controller - The Holes-->
+        <scene sceneID="mAm-H1-1OF">
+            <objects>
+                <tableViewController id="z53-Fc-mmc" customClass="HolesViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="nT7-96-o5l">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="dsL-EU-TUG">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="z53-Fc-mmc" id="2cU-EL-F5i"/>
+                            <outlet property="delegate" destination="z53-Fc-mmc" id="LFq-24-RIr"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="The Holes" id="oLM-8s-IFv"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lZV-7B-Ozs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7" y="967"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="zHw-bU-w9c">
