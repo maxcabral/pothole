@@ -289,8 +289,10 @@
 - (IBAction)drivingSwitchValueChanged:(UISwitch *)sender {
     if (sender.on){
         [self disableControls];
+        [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
     } else {
         [self enableControls];
+        [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
     }
 }
 
