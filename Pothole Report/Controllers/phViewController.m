@@ -342,7 +342,7 @@
         {
             NSLog(@"Mail sent");
             for (Location *locRecord in [self getUnsentReports]) {
-//                [locRecord setPost:YES];
+                [locRecord setPost:YES];
             }
             NSError *error;
             if (![self.managedObjectContext save:&error]) {

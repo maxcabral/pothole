@@ -218,7 +218,7 @@
                                 <action selector="showEmail:" destination="2" id="T74-jU-wG6"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="+Save in History" id="QnF-ds-d8h">
+                        <barButtonItem key="rightBarButtonItem" title="+ Detailed" id="QnF-ds-d8h">
                             <connections>
                                 <segue destination="vCF-Ve-cjk" kind="modal" identifier="TagPothole" id="04b-Ys-NKy"/>
                             </connections>
