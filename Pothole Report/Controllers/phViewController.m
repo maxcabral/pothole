@@ -110,6 +110,12 @@
     potholeLocation.longitude = [NSNumber numberWithDouble:location.coordinate.longitude];
     potholeLocation.date = [NSDate date];
     potholeLocation.placemark = placemark;
+    
+    NSError *error;
+    if (![self.managedObjectContext save:&error]) {
+        FATAL_CORE_DATA_ERROR(error);
+        return;
+    }
 }
 
 - (void)startLocationManager
@@ -213,6 +219,7 @@
                 performingReverseGeocoding = NO;
                 [self stopLocationManager];
                 [self updateLabels];
+                [self savePothole];
                 [hudView hide:YES];
             }];
         }
@@ -252,9 +259,9 @@
 
 - (IBAction)showEmail:(id)sender {
     // Email Subject
-    NSString *emailTitle = @"Test Email";
+    NSString *emailTitle = @"Pothole report";
     // Email Content
-    NSString *messageBody = @"iOS programming is so fun!";
+    NSString *messageBody = [self reportBody];
     // To address
     NSArray *toRecipents = [NSArray arrayWithObject:@"max@maxcabral.com"];
     
@@ -267,6 +274,42 @@
     // Present mail view controller on screen
     [self presentViewController:mc animated:YES completion:NULL];
     
+}
+
+- (NSString*)reportBody
+{
+    NSMutableString *report = [[NSMutableString alloc] init];
+    NSFetchedResultsController* fetchedResultsController;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Location" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    
+    [fetchRequest setFetchBatchSize:20];
+    
+    fetchedResultsController = [[NSFetchedResultsController alloc]
+                                initWithFetchRequest:fetchRequest
+                                managedObjectContext:self.managedObjectContext
+                                sectionNameKeyPath:nil
+                                cacheName:@"Locations"];
+    NSError *error = nil;
+    NSMutableArray *mutableFetchResults = [[managedObjectContext executeFetchRequest:fetchRequest error:&error] mutableCopy];
+    if (mutableFetchResults == nil) {
+        // Handle the error.
+    } else {
+        int cnt = 1;
+        for (phLocation *locRecord in mutableFetchResults) {
+            [report appendString:[NSString stringWithFormat:@"Report #%i\n",cnt++]];
+            [report appendString:[phLocation printableDescription:locRecord]];
+            [report appendString:@"\n\n----------\n\n"];
+        }
+
+    }
+    
+    return [report copy];
 }
 
 - (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error

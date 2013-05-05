@@ -32,15 +32,20 @@
     }
 }
 
-- (void)savePotholeWithLocation:(CLLocation*)location andPlaceMark:(CLPlacemark*)placemark
+- (NSString *)description
 {
-    phLocation *potholeLocation = [NSEntityDescription insertNewObjectForEntityForName:@"Location" inManagedObjectContext:self.managedObjectContext];
-    
-    potholeLocation.locationDescription = [phLocation stringFromPlacemark:placemark];
-    potholeLocation.latitude = [NSNumber numberWithDouble:location.coordinate.latitude];
-    potholeLocation.longitude = [NSNumber numberWithDouble:location.coordinate.longitude];
-    potholeLocation.date = [NSDate date];
-    potholeLocation.placemark = placemark;
+    return [phLocation printableDescription:self];
+}
+
++ (NSString *)printableDescription:(phLocation*)managedObj
+{
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"YYYY-MM-DD"];
+    return [NSString stringWithFormat:@"Date: %@\nLat: %@ Long: %@\nApproximate Address: %@",
+            [dateFormat stringFromDate:managedObj.date],
+            managedObj.latitude,
+            managedObj.longitude,
+            managedObj.locationDescription];
 }
 
 + (NSString *)stringFromPlacemark:(CLPlacemark *)thePlacemark

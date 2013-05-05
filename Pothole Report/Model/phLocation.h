@@ -19,4 +19,6 @@
 @property (nonatomic, retain) CLPlacemark *placemark;
 @property (nonatomic) BOOL post;
 + (NSString *)stringFromPlacemark:(CLPlacemark *)thePlacemark;
++ (NSString *)printableDescription:(NSManagedObject*)managedObj;
+- (NSString *)description;
 @end
