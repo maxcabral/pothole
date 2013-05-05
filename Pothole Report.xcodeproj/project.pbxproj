@@ -12,6 +12,9 @@
 		501FABBB1735E6B000E5AF69 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501FABBA1735E6B000E5AF69 /* MessageUI.framework */; };
 		502D8D5E1735A7FE00AD11AE /* phLosAngelesSubmission.m in Sources */ = {isa = PBXBuildFile; fileRef = 502D8D5B1735A7FE00AD11AE /* phLosAngelesSubmission.m */; };
 		502D8D5F1735A7FE00AD11AE /* phSubmission.m in Sources */ = {isa = PBXBuildFile; fileRef = 502D8D5D1735A7FE00AD11AE /* phSubmission.m */; };
+		503A91F21736378E009FE49D /* HolesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A91ED1736378E009FE49D /* HolesViewController.m */; };
+		503A91F31736378E009FE49D /* phdetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A91EF1736378E009FE49D /* phdetailsViewController.m */; };
+		503A91F41736378E009FE49D /* phViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A91F11736378E009FE49D /* phViewController.m */; };
 		50CEC7141735936D007ADC0B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7131735936D007ADC0B /* UIKit.framework */; };
 		50CEC7161735936D007ADC0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7151735936D007ADC0B /* Foundation.framework */; };
 		50CEC7181735936D007ADC0B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7171735936D007ADC0B /* CoreGraphics.framework */; };
@@ -22,17 +25,14 @@
 		50CEC7281735936D007ADC0B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50CEC7271735936D007ADC0B /* Default@2x.png */; };
 		50CEC72A1735936D007ADC0B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 50CEC7291735936D007ADC0B /* Default-568h@2x.png */; };
 		50CEC72D1735936D007ADC0B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50CEC72B1735936D007ADC0B /* MainStoryboard.storyboard */; };
-		50CEC7301735936D007ADC0B /* phViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CEC72F1735936D007ADC0B /* phViewController.m */; };
 		50CEC7381735936D007ADC0B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7371735936D007ADC0B /* SenTestingKit.framework */; };
 		50CEC7391735936D007ADC0B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7131735936D007ADC0B /* UIKit.framework */; };
 		50CEC73A1735936D007ADC0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7151735936D007ADC0B /* Foundation.framework */; };
 		50CEC7421735936D007ADC0B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50CEC7401735936D007ADC0B /* InfoPlist.strings */; };
 		50CEC7451735936D007ADC0B /* Pothole_ReportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CEC7441735936D007ADC0B /* Pothole_ReportTests.m */; };
 		F65084D01735A2C700D93C90 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F65084CF1735A2C700D93C90 /* CoreLocation.framework */; };
-		F65084D31735B5ED00D93C90 /* phdetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F65084D21735B5ED00D93C90 /* phdetailsViewController.m */; };
 		F65084D61735CBA000D93C90 /* HudView.m in Sources */ = {isa = PBXBuildFile; fileRef = F65084D51735CBA000D93C90 /* HudView.m */; };
 		F65084D91735D82200D93C90 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F65084D71735D82200D93C90 /* DataModel.xcdatamodeld */; };
-		F665E0C41735F65E0081F40A /* HolesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F665E0C31735F65E0081F40A /* HolesViewController.m */; };
 		F665E0C71735FBE40081F40A /* LocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F665E0C61735FBE40081F40A /* LocationCell.m */; };
 		F67DD7D41735DA990003BFE1 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = F67DD7D31735DA990003BFE1 /* Location.m */; };
 /* End PBXBuildFile section */
@@ -56,6 +56,12 @@
 		502D8D5D1735A7FE00AD11AE /* phSubmission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = phSubmission.m; sourceTree = "<group>"; };
 		502D8D961735C16900AD11AE /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+URLEncoding.h"; path = "SupportingFiles/NSString+URLEncoding.h"; sourceTree = "<group>"; };
 		502D8D971735C1CF00AD11AE /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+URLEncoding.m"; path = "SupportingFiles/NSString+URLEncoding.m"; sourceTree = "<group>"; };
+		503A91EC1736378E009FE49D /* HolesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HolesViewController.h; sourceTree = "<group>"; };
+		503A91ED1736378E009FE49D /* HolesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HolesViewController.m; sourceTree = "<group>"; };
+		503A91EE1736378E009FE49D /* phdetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = phdetailsViewController.h; sourceTree = "<group>"; };
+		503A91EF1736378E009FE49D /* phdetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = phdetailsViewController.m; sourceTree = "<group>"; };
+		503A91F01736378E009FE49D /* phViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = phViewController.h; sourceTree = "<group>"; };
+		503A91F11736378E009FE49D /* phViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = phViewController.m; sourceTree = "<group>"; };
 		50CEC7101735936D007ADC0B /* Pothole Report.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pothole Report.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CEC7131735936D007ADC0B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		50CEC7151735936D007ADC0B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -70,8 +76,6 @@
 		50CEC7271735936D007ADC0B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		50CEC7291735936D007ADC0B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		50CEC72C1735936D007ADC0B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		50CEC72E1735936D007ADC0B /* phViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = phViewController.h; sourceTree = "<group>"; };
-		50CEC72F1735936D007ADC0B /* phViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = phViewController.m; sourceTree = "<group>"; };
 		50CEC7361735936D007ADC0B /* Pothole ReportTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pothole ReportTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CEC7371735936D007ADC0B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		50CEC73F1735936D007ADC0B /* Pothole ReportTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Pothole ReportTests-Info.plist"; sourceTree = "<group>"; };
@@ -79,13 +83,9 @@
 		50CEC7431735936D007ADC0B /* Pothole_ReportTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pothole_ReportTests.h; sourceTree = "<group>"; };
 		50CEC7441735936D007ADC0B /* Pothole_ReportTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pothole_ReportTests.m; sourceTree = "<group>"; };
 		F65084CF1735A2C700D93C90 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		F65084D11735B5ED00D93C90 /* phdetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = phdetailsViewController.h; sourceTree = "<group>"; };
-		F65084D21735B5ED00D93C90 /* phdetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = phdetailsViewController.m; sourceTree = "<group>"; };
 		F65084D41735CBA000D93C90 /* HudView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HudView.h; sourceTree = "<group>"; };
 		F65084D51735CBA000D93C90 /* HudView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HudView.m; sourceTree = "<group>"; };
 		F65084D81735D82200D93C90 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
-		F665E0C21735F65E0081F40A /* HolesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HolesViewController.h; sourceTree = "<group>"; };
-		F665E0C31735F65E0081F40A /* HolesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HolesViewController.m; sourceTree = "<group>"; };
 		F665E0C51735FBE40081F40A /* LocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationCell.h; sourceTree = "<group>"; };
 		F665E0C61735FBE40081F40A /* LocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationCell.m; sourceTree = "<group>"; };
 		F67DD7D21735DA990003BFE1 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
@@ -130,6 +130,19 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		503A91EB1736378E009FE49D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				503A91EC1736378E009FE49D /* HolesViewController.h */,
+				503A91ED1736378E009FE49D /* HolesViewController.m */,
+				503A91EE1736378E009FE49D /* phdetailsViewController.h */,
+				503A91EF1736378E009FE49D /* phdetailsViewController.m */,
+				503A91F01736378E009FE49D /* phViewController.h */,
+				503A91F11736378E009FE49D /* phViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		50CEC7071735936D007ADC0B = {
 			isa = PBXGroup;
 			children = (
@@ -169,18 +182,13 @@
 		50CEC7191735936D007ADC0B /* Pothole Report */ = {
 			isa = PBXGroup;
 			children = (
+				503A91EB1736378E009FE49D /* Controllers */,
 				502D8D591735A7FE00AD11AE /* Model */,
 				50CEC7221735936D007ADC0B /* phAppDelegate.h */,
 				50CEC7231735936D007ADC0B /* phAppDelegate.m */,
 				F665E0C51735FBE40081F40A /* LocationCell.h */,
 				F665E0C61735FBE40081F40A /* LocationCell.m */,
 				50CEC72B1735936D007ADC0B /* MainStoryboard.storyboard */,
-				F665E0C21735F65E0081F40A /* HolesViewController.h */,
-				F665E0C31735F65E0081F40A /* HolesViewController.m */,
-				50CEC72E1735936D007ADC0B /* phViewController.h */,
-				50CEC72F1735936D007ADC0B /* phViewController.m */,
-				F65084D11735B5ED00D93C90 /* phdetailsViewController.h */,
-				F65084D21735B5ED00D93C90 /* phdetailsViewController.m */,
 				F65084D41735CBA000D93C90 /* HudView.h */,
 				F65084D51735CBA000D93C90 /* HudView.m */,
 				50CEC71A1735936D007ADC0B /* Supporting Files */,
@@ -337,15 +345,15 @@
 				501FABAD1735DE8900E5AF69 /* NSString+URLEncoding.m in Sources */,
 				50CEC7201735936D007ADC0B /* main.m in Sources */,
 				50CEC7241735936D007ADC0B /* phAppDelegate.m in Sources */,
-				50CEC7301735936D007ADC0B /* phViewController.m in Sources */,
 				502D8D5E1735A7FE00AD11AE /* phLosAngelesSubmission.m in Sources */,
 				502D8D5F1735A7FE00AD11AE /* phSubmission.m in Sources */,
-				F65084D31735B5ED00D93C90 /* phdetailsViewController.m in Sources */,
 				F65084D61735CBA000D93C90 /* HudView.m in Sources */,
 				F65084D91735D82200D93C90 /* DataModel.xcdatamodeld in Sources */,
 				F67DD7D41735DA990003BFE1 /* Location.m in Sources */,
-				F665E0C41735F65E0081F40A /* HolesViewController.m in Sources */,
 				F665E0C71735FBE40081F40A /* LocationCell.m in Sources */,
+				503A91F21736378E009FE49D /* HolesViewController.m in Sources */,
+				503A91F31736378E009FE49D /* phdetailsViewController.m in Sources */,
+				503A91F41736378E009FE49D /* phViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
