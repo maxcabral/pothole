@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		501FABAC1735DDF500E5AF69 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501FABAB1735DDF500E5AF69 /* CoreData.framework */; };
 		501FABAD1735DE8900E5AF69 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 502D8D971735C1CF00AD11AE /* NSString+URLEncoding.m */; };
+		501FABBB1735E6B000E5AF69 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 501FABBA1735E6B000E5AF69 /* MessageUI.framework */; };
 		502D8D5E1735A7FE00AD11AE /* phLosAngelesSubmission.m in Sources */ = {isa = PBXBuildFile; fileRef = 502D8D5B1735A7FE00AD11AE /* phLosAngelesSubmission.m */; };
 		502D8D5F1735A7FE00AD11AE /* phSubmission.m in Sources */ = {isa = PBXBuildFile; fileRef = 502D8D5D1735A7FE00AD11AE /* phSubmission.m */; };
 		50CEC7141735936D007ADC0B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7131735936D007ADC0B /* UIKit.framework */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		501FABAB1735DDF500E5AF69 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		501FABBA1735E6B000E5AF69 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		502D8D5A1735A7FE00AD11AE /* phLosAngelesSubmission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = phLosAngelesSubmission.h; sourceTree = "<group>"; };
 		502D8D5B1735A7FE00AD11AE /* phLosAngelesSubmission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = phLosAngelesSubmission.m; sourceTree = "<group>"; };
 		502D8D5C1735A7FE00AD11AE /* phSubmission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = phSubmission.h; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				501FABBB1735E6B000E5AF69 /* MessageUI.framework in Frameworks */,
 				501FABAC1735DDF500E5AF69 /* CoreData.framework in Frameworks */,
 				F65084D01735A2C700D93C90 /* CoreLocation.framework in Frameworks */,
 				50CEC7141735936D007ADC0B /* UIKit.framework in Frameworks */,
@@ -124,6 +127,7 @@
 		50CEC7071735936D007ADC0B = {
 			isa = PBXGroup;
 			children = (
+				501FABBA1735E6B000E5AF69 /* MessageUI.framework */,
 				501FABAB1735DDF500E5AF69 /* CoreData.framework */,
 				F67DD7D21735DA990003BFE1 /* Location.h */,
 				F67DD7D31735DA990003BFE1 /* Location.m */,
@@ -404,7 +408,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -428,7 +432,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

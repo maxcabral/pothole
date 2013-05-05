@@ -9,6 +9,7 @@
 #import "phViewController.h"
 #import "phLosAngelesSubmission.h"
 #import "phdetailsViewController.h"
+#import <MessageUI/MessageUI.h>
 
 @interface phViewController()
 
@@ -28,10 +29,7 @@
     phLosAngelesSubmission *laSubmission;
 }
 
-@synthesize latitudeLabel;
-@synthesize longitudeLabel;
-@synthesize addressLabel;
-@synthesize tagButton;
+@synthesize latitudeLabel, longitudeLabel, addressLabel, tagButton, emailButton;
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -60,7 +58,7 @@
     
     [self updateLabels];
     [self configureGetButton];
-    [laSubmission submitWithName:@"Test" Address:@"100 Main St" Phone:@"8001234567" Email:@"test@example.com" Description:@"Please Ignore" Comment:@"This is a test" AndLocation:@"Los Angeles"];
+    /*[laSubmission submitWithName:@"Test" Address:@"100 Main St" Phone:@"8001234567" Email:@"test@example.com" Description:@"Please Ignore" Comment:@"This is a test" AndLocation:@"Los Angeles"];*/
 }
 
 
@@ -184,6 +182,12 @@
     [self configureGetButton];
 }
 
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    self.emailButton.hidden = NO;
+}
 #pragma mark - CLLocationManagerDelegate
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
@@ -285,4 +289,55 @@
         NSLog(@"%@ - %@",key,[response objectForKey:key]);
     }
 }
+@end
+
+@interface phViewController (EmailView)
+
+@end
+
+@implementation phViewController (EmailView)
+
+- (IBAction)showEmail:(id)sender {
+    // Email Subject
+    NSString *emailTitle = @"Test Email";
+    // Email Content
+    NSString *messageBody = @"iOS programming is so fun!";
+    // To address
+    NSArray *toRecipents = [NSArray arrayWithObject:@"max@maxcabral.com"];
+    
+    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+    mc.mailComposeDelegate = (id)self;
+    [mc setSubject:emailTitle];
+    [mc setMessageBody:messageBody isHTML:NO];
+    [mc setToRecipients:toRecipents];
+    
+    // Present mail view controller on screen
+    [self presentViewController:mc animated:YES completion:NULL];
+    
+}
+
+- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Mail cancelled");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Mail saved");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Mail sent");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
+            break;
+        default:
+            break;
+    }
+    
+    // Close the Mail Interface
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
 @end
