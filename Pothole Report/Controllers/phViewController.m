@@ -31,6 +31,7 @@
     NSError *lastGeocodingError;
     phLosAngelesSubmission *laSubmission;
     MBProgressHUD *hudView;
+    NSMutableArray *mutableFetchResults;
 }
 
 @synthesize addressLabel, tagButton, emailButton, managedObjectContext;
@@ -163,6 +164,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]]];
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
     laSubmission = [[phLosAngelesSubmission alloc] init];
@@ -279,24 +281,8 @@
 - (NSString*)reportBody
 {
     NSMutableString *report = [[NSMutableString alloc] init];
-    NSFetchedResultsController* fetchedResultsController;
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Location" inManagedObjectContext:self.managedObjectContext];
-    [fetchRequest setEntity:entity];
-    
-    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES];
-    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
-    
-    [fetchRequest setFetchBatchSize:20];
-    
-    fetchedResultsController = [[NSFetchedResultsController alloc]
-                                initWithFetchRequest:fetchRequest
-                                managedObjectContext:self.managedObjectContext
-                                sectionNameKeyPath:nil
-                                cacheName:@"Locations"];
-    NSError *error = nil;
-    NSMutableArray *mutableFetchResults = [[managedObjectContext executeFetchRequest:fetchRequest error:&error] mutableCopy];
+
+    mutableFetchResults = [self getUnsentReports];
     if (mutableFetchResults == nil) {
         // Handle the error.
     } else {
@@ -312,6 +298,36 @@
     return [report copy];
 }
 
+- (NSMutableArray*)getUnsentReports
+{
+    NSFetchedResultsController* fetchedResultsController;
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Location" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES];
+    NSSortDescriptor *postedDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"post" ascending:YES];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObject:postedDescriptor]];
+    
+    [fetchRequest setFetchBatchSize:20];
+    
+    fetchedResultsController = [[NSFetchedResultsController alloc]
+                                initWithFetchRequest:fetchRequest
+                                managedObjectContext:self.managedObjectContext
+                                sectionNameKeyPath:nil
+                                cacheName:@"Locations"];
+    NSError *error = nil;
+    NSMutableArray *results = [[NSMutableArray alloc] init];
+    for (phLocation *locReport in [managedObjectContext executeFetchRequest:fetchRequest error:&error]) {
+        if (!locReport.post){
+            [results addObject:locReport];
+        }
+    }
+    return results;
+}
+
 - (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
     switch (result)
@@ -323,8 +339,17 @@
             NSLog(@"Mail saved");
             break;
         case MFMailComposeResultSent:
+        {
             NSLog(@"Mail sent");
+            for (phLocation *locRecord in [self getUnsentReports]) {
+//                [locRecord setPost:YES];
+            }
+            NSError *error;
+            if (![self.managedObjectContext save:&error]) {
+                FATAL_CORE_DATA_ERROR(error);
+            }
             break;
+        }
         case MFMailComposeResultFailed:
             NSLog(@"Mail sent failure: %@", [error localizedDescription]);
             break;
