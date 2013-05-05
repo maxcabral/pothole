@@ -32,6 +32,7 @@
 		F65084D31735B5ED00D93C90 /* phdetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F65084D21735B5ED00D93C90 /* phdetailsViewController.m */; };
 		F65084D61735CBA000D93C90 /* HudView.m in Sources */ = {isa = PBXBuildFile; fileRef = F65084D51735CBA000D93C90 /* HudView.m */; };
 		F65084D91735D82200D93C90 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F65084D71735D82200D93C90 /* DataModel.xcdatamodeld */; };
+		F665E0C41735F65E0081F40A /* HolesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F665E0C31735F65E0081F40A /* HolesViewController.m */; };
 		F67DD7D41735DA990003BFE1 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = F67DD7D31735DA990003BFE1 /* Location.m */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +83,8 @@
 		F65084D41735CBA000D93C90 /* HudView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HudView.h; sourceTree = "<group>"; };
 		F65084D51735CBA000D93C90 /* HudView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HudView.m; sourceTree = "<group>"; };
 		F65084D81735D82200D93C90 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		F665E0C21735F65E0081F40A /* HolesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HolesViewController.h; sourceTree = "<group>"; };
+		F665E0C31735F65E0081F40A /* HolesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HolesViewController.m; sourceTree = "<group>"; };
 		F67DD7D21735DA990003BFE1 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		F67DD7D31735DA990003BFE1 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -167,6 +170,8 @@
 				50CEC7221735936D007ADC0B /* phAppDelegate.h */,
 				50CEC7231735936D007ADC0B /* phAppDelegate.m */,
 				50CEC72B1735936D007ADC0B /* MainStoryboard.storyboard */,
+				F665E0C21735F65E0081F40A /* HolesViewController.h */,
+				F665E0C31735F65E0081F40A /* HolesViewController.m */,
 				50CEC72E1735936D007ADC0B /* phViewController.h */,
 				50CEC72F1735936D007ADC0B /* phViewController.m */,
 				F65084D11735B5ED00D93C90 /* phdetailsViewController.h */,
@@ -334,6 +339,7 @@
 				F65084D61735CBA000D93C90 /* HudView.m in Sources */,
 				F65084D91735D82200D93C90 /* DataModel.xcdatamodeld in Sources */,
 				F67DD7D41735DA990003BFE1 /* Location.m in Sources */,
+				F665E0C41735F65E0081F40A /* HolesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

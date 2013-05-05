@@ -8,6 +8,7 @@
 
 #import "phAppDelegate.h"
 #import "phViewController.h"
+#import "HolesViewController.h"
 
 @interface phAppDelegate ()
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
@@ -26,6 +27,12 @@
     UINavigationController *navigationController = (UINavigationController *)[[tabBarController viewControllers] objectAtIndex:0];
     phViewController *PhViewController = (phViewController *)[[navigationController viewControllers] objectAtIndex:0];
     PhViewController.managedObjectContext = self.managedObjectContext;
+    
+    navigationController = (UINavigationController *)[[tabBarController viewControllers] objectAtIndex:1];
+    HolesViewController *locationsViewController = (HolesViewController *)[[navigationController viewControllers] objectAtIndex:0];
+    locationsViewController.managedObjectContext = self.managedObjectContext;
+    
+
     
     return YES;
 }
@@ -108,5 +115,24 @@
     return managedObjectContext;
 }
 
+
+- (void)fatalCoreDataError:(NSError *)error
+{
+    UIAlertView *alertView = [[UIAlertView alloc]
+                              initWithTitle:NSLocalizedString(@"Internal Error", nil)
+                              message:NSLocalizedString(@"There was a fatal error in the app and it cannot continue.\n\nPress OK to terminate the app. Sorry for the inconvenience.", nil)
+                              delegate:self
+                              cancelButtonTitle:NSLocalizedString(@"OK", nil)
+                              otherButtonTitles:nil];
+    
+    [alertView show];
+}
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)theAlertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    abort();
+}
 
 @end

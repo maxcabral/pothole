@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface phAppDelegate : UIResponder <UIApplicationDelegate>
+@interface phAppDelegate : UIResponder <UIApplicationDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
