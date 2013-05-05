@@ -20,6 +20,9 @@
 		503A91FF1736DA25009FE49D /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A91FE1736DA25009FE49D /* MBProgressHUD.m */; };
 		503A92011736E1DD009FE49D /* app_icon_iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 503A92001736E1DD009FE49D /* app_icon_iphone.png */; };
 		503A92031736E1E1009FE49D /* app_icon_iphone5_or_HighResIphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 503A92021736E1E1009FE49D /* app_icon_iphone5_or_HighResIphone.png */; };
+		5095B8281736ECDE0044AC21 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 503A92041736E1FA009FE49D /* Default.png */; };
+		5095B82B1736EE060044AC21 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 503A92061736E200009FE49D /* Default@2x.png */; };
+		5095B82C1736EE080044AC21 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 503A92081736E203009FE49D /* Default-568h@2x.png */; };
 		50CEC7141735936D007ADC0B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7131735936D007ADC0B /* UIKit.framework */; };
 		50CEC7161735936D007ADC0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7151735936D007ADC0B /* Foundation.framework */; };
 		50CEC7181735936D007ADC0B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7171735936D007ADC0B /* CoreGraphics.framework */; };
@@ -73,20 +76,20 @@
 		503A92041736E1FA009FE49D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		503A92061736E200009FE49D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		503A92081736E203009FE49D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		50CEC7101735936D007ADC0B /* Pothole Report.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pothole Report.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		50CEC7101735936D007ADC0B /* iSpotHoles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSpotHoles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CEC7131735936D007ADC0B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		50CEC7151735936D007ADC0B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		50CEC7171735936D007ADC0B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		50CEC71B1735936D007ADC0B /* Pothole Report-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Pothole Report-Info.plist"; sourceTree = "<group>"; };
+		50CEC71B1735936D007ADC0B /* iSpotHoles-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iSpotHoles-Info.plist"; sourceTree = "<group>"; };
 		50CEC71D1735936D007ADC0B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		50CEC71F1735936D007ADC0B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		50CEC7211735936D007ADC0B /* Pothole Report-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pothole Report-Prefix.pch"; sourceTree = "<group>"; };
+		50CEC7211735936D007ADC0B /* iSpotHoles-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iSpotHoles-Prefix.pch"; sourceTree = "<group>"; };
 		50CEC7221735936D007ADC0B /* phAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = phAppDelegate.h; sourceTree = "<group>"; };
 		50CEC7231735936D007ADC0B /* phAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = phAppDelegate.m; sourceTree = "<group>"; };
 		50CEC72C1735936D007ADC0B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		50CEC7361735936D007ADC0B /* Pothole ReportTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pothole ReportTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		50CEC7361735936D007ADC0B /* iSpotHolesTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iSpotHolesTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CEC7371735936D007ADC0B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		50CEC73F1735936D007ADC0B /* Pothole ReportTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Pothole ReportTests-Info.plist"; sourceTree = "<group>"; };
+		50CEC73F1735936D007ADC0B /* iSpotHolesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iSpotHolesTests-Info.plist"; sourceTree = "<group>"; };
 		50CEC7411735936D007ADC0B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		50CEC7431735936D007ADC0B /* Pothole_ReportTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pothole_ReportTests.h; sourceTree = "<group>"; };
 		50CEC7441735936D007ADC0B /* Pothole_ReportTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pothole_ReportTests.m; sourceTree = "<group>"; };
@@ -175,8 +178,8 @@
 		50CEC7111735936D007ADC0B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				50CEC7101735936D007ADC0B /* Pothole Report.app */,
-				50CEC7361735936D007ADC0B /* Pothole ReportTests.octest */,
+				50CEC7101735936D007ADC0B /* iSpotHoles.app */,
+				50CEC7361735936D007ADC0B /* iSpotHolesTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -214,10 +217,10 @@
 			children = (
 				503A91FE1736DA25009FE49D /* MBProgressHUD.m */,
 				503A91FC1736D924009FE49D /* MBProgressHUD.h */,
-				50CEC71B1735936D007ADC0B /* Pothole Report-Info.plist */,
+				50CEC71B1735936D007ADC0B /* iSpotHoles-Info.plist */,
 				50CEC71C1735936D007ADC0B /* InfoPlist.strings */,
 				50CEC71F1735936D007ADC0B /* main.m */,
-				50CEC7211735936D007ADC0B /* Pothole Report-Prefix.pch */,
+				50CEC7211735936D007ADC0B /* iSpotHoles-Prefix.pch */,
 				502D8D961735C16900AD11AE /* NSString+URLEncoding.h */,
 				502D8D971735C1CF00AD11AE /* NSString+URLEncoding.m */,
 			);
@@ -237,7 +240,7 @@
 		50CEC73E1735936D007ADC0B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				50CEC73F1735936D007ADC0B /* Pothole ReportTests-Info.plist */,
+				50CEC73F1735936D007ADC0B /* iSpotHolesTests-Info.plist */,
 				50CEC7401735936D007ADC0B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -246,9 +249,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		50CEC70F1735936D007ADC0B /* Pothole Report */ = {
+		50CEC70F1735936D007ADC0B /* iSpotHoles */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 50CEC7481735936D007ADC0B /* Build configuration list for PBXNativeTarget "Pothole Report" */;
+			buildConfigurationList = 50CEC7481735936D007ADC0B /* Build configuration list for PBXNativeTarget "iSpotHoles" */;
 			buildPhases = (
 				50CEC70C1735936D007ADC0B /* Sources */,
 				50CEC70D1735936D007ADC0B /* Frameworks */,
@@ -258,14 +261,14 @@
 			);
 			dependencies = (
 			);
-			name = "Pothole Report";
+			name = iSpotHoles;
 			productName = "Pothole Report";
-			productReference = 50CEC7101735936D007ADC0B /* Pothole Report.app */;
+			productReference = 50CEC7101735936D007ADC0B /* iSpotHoles.app */;
 			productType = "com.apple.product-type.application";
 		};
-		50CEC7351735936D007ADC0B /* Pothole ReportTests */ = {
+		50CEC7351735936D007ADC0B /* iSpotHolesTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 50CEC74B1735936D007ADC0B /* Build configuration list for PBXNativeTarget "Pothole ReportTests" */;
+			buildConfigurationList = 50CEC74B1735936D007ADC0B /* Build configuration list for PBXNativeTarget "iSpotHolesTests" */;
 			buildPhases = (
 				50CEC7311735936D007ADC0B /* Sources */,
 				50CEC7321735936D007ADC0B /* Frameworks */,
@@ -277,9 +280,9 @@
 			dependencies = (
 				50CEC73C1735936D007ADC0B /* PBXTargetDependency */,
 			);
-			name = "Pothole ReportTests";
+			name = iSpotHolesTests;
 			productName = "Pothole ReportTests";
-			productReference = 50CEC7361735936D007ADC0B /* Pothole ReportTests.octest */;
+			productReference = 50CEC7361735936D007ADC0B /* iSpotHolesTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -292,7 +295,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = Pothole;
 			};
-			buildConfigurationList = 50CEC70B1735936D007ADC0B /* Build configuration list for PBXProject "Pothole Report" */;
+			buildConfigurationList = 50CEC70B1735936D007ADC0B /* Build configuration list for PBXProject "iSpotHoles" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -304,8 +307,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				50CEC70F1735936D007ADC0B /* Pothole Report */,
-				50CEC7351735936D007ADC0B /* Pothole ReportTests */,
+				50CEC70F1735936D007ADC0B /* iSpotHoles */,
+				50CEC7351735936D007ADC0B /* iSpotHolesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -319,6 +322,9 @@
 				50CEC72D1735936D007ADC0B /* MainStoryboard.storyboard in Resources */,
 				503A92011736E1DD009FE49D /* app_icon_iphone.png in Resources */,
 				503A92031736E1E1009FE49D /* app_icon_iphone5_or_HighResIphone.png in Resources */,
+				5095B8281736ECDE0044AC21 /* Default.png in Resources */,
+				5095B82B1736EE060044AC21 /* Default@2x.png in Resources */,
+				5095B82C1736EE080044AC21 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,7 +388,7 @@
 /* Begin PBXTargetDependency section */
 		50CEC73C1735936D007ADC0B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 50CEC70F1735936D007ADC0B /* Pothole Report */;
+			target = 50CEC70F1735936D007ADC0B /* iSpotHoles */;
 			targetProxy = 50CEC73B1735936D007ADC0B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -475,13 +481,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Pothole Report/Pothole Report-Prefix.pch";
-				INFOPLIST_FILE = "Pothole Report/Pothole Report-Info.plist";
+				GCC_PREFIX_HEADER = "Pothole Report/iSpotHoles-Prefix.pch";
+				INFOPLIST_FILE = "Pothole Report/iSpotHoles-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Pothole Report/SupportingFiles\"",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = iSpotHoles;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -490,13 +496,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Pothole Report/Pothole Report-Prefix.pch";
-				INFOPLIST_FILE = "Pothole Report/Pothole Report-Info.plist";
+				GCC_PREFIX_HEADER = "Pothole Report/iSpotHoles-Prefix.pch";
+				INFOPLIST_FILE = "Pothole Report/iSpotHoles-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Pothole Report/SupportingFiles\"",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = iSpotHoles;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -511,8 +517,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pothole Report/Pothole Report-Prefix.pch";
-				INFOPLIST_FILE = "Pothole ReportTests/Pothole ReportTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "Pothole ReportTests/iSpotHolesTests-Info.plist";
+				PRODUCT_NAME = iSpotHolesTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -528,8 +534,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pothole Report/Pothole Report-Prefix.pch";
-				INFOPLIST_FILE = "Pothole ReportTests/Pothole ReportTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "Pothole ReportTests/iSpotHolesTests-Info.plist";
+				PRODUCT_NAME = iSpotHolesTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -538,7 +544,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		50CEC70B1735936D007ADC0B /* Build configuration list for PBXProject "Pothole Report" */ = {
+		50CEC70B1735936D007ADC0B /* Build configuration list for PBXProject "iSpotHoles" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				50CEC7461735936D007ADC0B /* Debug */,
@@ -547,7 +553,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		50CEC7481735936D007ADC0B /* Build configuration list for PBXNativeTarget "Pothole Report" */ = {
+		50CEC7481735936D007ADC0B /* Build configuration list for PBXNativeTarget "iSpotHoles" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				50CEC7491735936D007ADC0B /* Debug */,
@@ -556,7 +562,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		50CEC74B1735936D007ADC0B /* Build configuration list for PBXNativeTarget "Pothole ReportTests" */ = {
+		50CEC74B1735936D007ADC0B /* Build configuration list for PBXNativeTarget "iSpotHolesTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				50CEC74C1735936D007ADC0B /* Debug */,
