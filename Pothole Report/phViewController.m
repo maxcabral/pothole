@@ -60,7 +60,7 @@
     
     [self updateLabels];
     [self configureGetButton];
-    [laSubmission submitWithName:@"MAX" Address:@"100 Main St" Phone:@"8001234567" Email:@"max@maxcabral.com" Description:@"Massive Pothole" Comment:@"This is a test" AndLocation:@"Los Angeles"];
+    [laSubmission submitWithName:@"Test" Address:@"100 Main St" Phone:@"8001234567" Email:@"test@example.com" Description:@"Please Ignore" Comment:@"This is a test" AndLocation:@"Los Angeles"];
 }
 
 
