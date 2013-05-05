@@ -11,7 +11,7 @@
 #import "phdetailsViewController.h"
 #import "MBProgressHUD.h"
 #import <MessageUI/MessageUI.h>
-#import "phLocation.h"
+#import "Location.h"
 
 
 @interface phViewController()
@@ -104,7 +104,7 @@
 
 - (void)savePothole
 {
-    phLocation *potholeLocation = [NSEntityDescription insertNewObjectForEntityForName:@"Location" inManagedObjectContext:self.managedObjectContext];
+    Location *potholeLocation = [NSEntityDescription insertNewObjectForEntityForName:@"Location" inManagedObjectContext:self.managedObjectContext];
 
     potholeLocation.locationDescription = [self stringFromPlacemark:placemark];
     potholeLocation.latitude = [NSNumber numberWithDouble:location.coordinate.latitude];
@@ -287,9 +287,9 @@
         // Handle the error.
     } else {
         int cnt = 1;
-        for (phLocation *locRecord in mutableFetchResults) {
+        for (Location *locRecord in mutableFetchResults) {
             [report appendString:[NSString stringWithFormat:@"Report #%i\n",cnt++]];
-            [report appendString:[phLocation printableDescription:locRecord]];
+            [report appendString:[Location printableDescription:locRecord]];
             [report appendString:@"\n\n----------\n\n"];
         }
 
@@ -320,7 +320,7 @@
                                 cacheName:@"Locations"];
     NSError *error = nil;
     NSMutableArray *results = [[NSMutableArray alloc] init];
-    for (phLocation *locReport in [managedObjectContext executeFetchRequest:fetchRequest error:&error]) {
+    for (Location *locReport in [managedObjectContext executeFetchRequest:fetchRequest error:&error]) {
         if (!locReport.post){
             [results addObject:locReport];
         }
@@ -341,7 +341,7 @@
         case MFMailComposeResultSent:
         {
             NSLog(@"Mail sent");
-            for (phLocation *locRecord in [self getUnsentReports]) {
+            for (Location *locRecord in [self getUnsentReports]) {
 //                [locRecord setPost:YES];
             }
             NSError *error;

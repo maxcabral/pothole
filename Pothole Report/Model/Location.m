@@ -6,9 +6,15 @@
 //  Copyright (c) 2013 Pothole. All rights reserved.
 //
 
-#import "phLocation.h"
+#import "Location.h"
 
-@implementation phLocation
+@interface Location ()
+
+@property (nonatomic, setter = setCoordinate:, getter = coordinate) CLLocationCoordinate2D coordinate;
+@end
+
+@implementation Location
+@synthesize coordinate;
 
 @dynamic latitude;
 @dynamic longitude;
@@ -23,6 +29,11 @@
     return CLLocationCoordinate2DMake([self.latitude doubleValue], [self.longitude doubleValue]);
 }
 
+- (void)setCoordinate:(CLLocationCoordinate2D)newCoordinate
+{
+    
+}
+
 - (NSString *)title
 {
     if ([self.locationDescription length] > 0) {
@@ -34,10 +45,10 @@
 
 - (NSString *)description
 {
-    return [phLocation printableDescription:self];
+    return [Location printableDescription:self];
 }
 
-+ (NSString *)printableDescription:(phLocation*)managedObj
++ (NSString *)printableDescription:(Location*)managedObj
 {
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"YYYY-MM-DD"];

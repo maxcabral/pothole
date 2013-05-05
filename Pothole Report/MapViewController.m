@@ -7,7 +7,7 @@
 //
 
 #import "MapViewController.h"
-#import "phLocation.h"
+#import "Location.h"
 #import "phdetailsViewController.h"
 
 @implementation MapViewController {
@@ -109,7 +109,7 @@
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
-    if ([annotation isKindOfClass:[phLocation class]]) {
+    if ([annotation isKindOfClass:[Location class]]) {
         
         static NSString *identifier = @"Location";
         MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
@@ -143,7 +143,7 @@
         phdetailsViewController *controller = (phdetailsViewController *)navigationController.topViewController;
         controller.managedObjectContext = self.managedObjectContext;
         
-        phLocation *location = [locations objectAtIndex:((UIButton *)sender).tag];
+        Location *location = [locations objectAtIndex:((UIButton *)sender).tag];
         controller.locationToEdit = location;
     }
 }

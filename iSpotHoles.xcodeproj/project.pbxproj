@@ -16,7 +16,7 @@
 		503A91F31736378E009FE49D /* phdetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A91EF1736378E009FE49D /* phdetailsViewController.m */; };
 		503A91F41736378E009FE49D /* phViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A91F11736378E009FE49D /* phViewController.m */; };
 		503A91F91736380D009FE49D /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 503A91F51736380D009FE49D /* DataModel.xcdatamodeld */; };
-		503A91FA1736380D009FE49D /* phLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A91F81736380D009FE49D /* phLocation.m */; };
+		503A91FA1736380D009FE49D /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A91F81736380D009FE49D /* Location.m */; };
 		503A91FF1736DA25009FE49D /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A91FE1736DA25009FE49D /* MBProgressHUD.m */; };
 		503A92011736E1DD009FE49D /* app_icon_iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 503A92001736E1DD009FE49D /* app_icon_iphone.png */; };
 		503A92031736E1E1009FE49D /* app_icon_iphone5_or_HighResIphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 503A92021736E1E1009FE49D /* app_icon_iphone5_or_HighResIphone.png */; };
@@ -70,8 +70,8 @@
 		503A91F01736378E009FE49D /* phViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = phViewController.h; sourceTree = "<group>"; };
 		503A91F11736378E009FE49D /* phViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = phViewController.m; sourceTree = "<group>"; };
 		503A91F61736380D009FE49D /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
-		503A91F71736380D009FE49D /* phLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = phLocation.h; sourceTree = "<group>"; };
-		503A91F81736380D009FE49D /* phLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = phLocation.m; sourceTree = "<group>"; };
+		503A91F71736380D009FE49D /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		503A91F81736380D009FE49D /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		503A91FC1736D924009FE49D /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = SupportingFiles/MBProgressHUD.h; sourceTree = "<group>"; };
 		503A91FE1736DA25009FE49D /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = SupportingFiles/MBProgressHUD.m; sourceTree = "<group>"; };
 		503A92001736E1DD009FE49D /* app_icon_iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon_iphone.png; sourceTree = "<group>"; };
@@ -139,8 +139,8 @@
 			isa = PBXGroup;
 			children = (
 				503A91F51736380D009FE49D /* DataModel.xcdatamodeld */,
-				503A91F71736380D009FE49D /* phLocation.h */,
-				503A91F81736380D009FE49D /* phLocation.m */,
+				503A91F71736380D009FE49D /* Location.h */,
+				503A91F81736380D009FE49D /* Location.m */,
 				502D8D5A1735A7FE00AD11AE /* phLosAngelesSubmission.h */,
 				502D8D5B1735A7FE00AD11AE /* phLosAngelesSubmission.m */,
 				502D8D5C1735A7FE00AD11AE /* phSubmission.h */,
@@ -390,7 +390,7 @@
 				503A91F31736378E009FE49D /* phdetailsViewController.m in Sources */,
 				503A91F41736378E009FE49D /* phViewController.m in Sources */,
 				503A91F91736380D009FE49D /* DataModel.xcdatamodeld in Sources */,
-				503A91FA1736380D009FE49D /* phLocation.m in Sources */,
+				503A91FA1736380D009FE49D /* Location.m in Sources */,
 				503A91FF1736DA25009FE49D /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

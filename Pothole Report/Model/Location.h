@@ -10,7 +10,7 @@
 #import <CoreData/CoreData.h>
 
 
-@interface phLocation : NSManagedObject <MKAnnotation>
+@interface Location : NSManagedObject <MKAnnotation>
 
 @property (nonatomic, retain) NSDate * date;
 @property (nonatomic, retain) NSNumber * latitude;
@@ -18,6 +18,10 @@
 @property (nonatomic, retain) NSNumber * longitude;
 @property (nonatomic, retain) CLPlacemark *placemark;
 @property (nonatomic) BOOL post;
+
+@property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
+- (void)setCoordinate:(CLLocationCoordinate2D)newCoordinate;
+
 + (NSString *)stringFromPlacemark:(CLPlacemark *)thePlacemark;
 + (NSString *)printableDescription:(NSManagedObject*)managedObj;
 - (NSString *)description;

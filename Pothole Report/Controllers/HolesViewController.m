@@ -7,7 +7,7 @@
 //
 
 #import "HolesViewController.h"
-#import "phLocation.h"
+#import "Location.h"
 #import "LocationCell.h"
 #import "phdetailsViewController.h"
 
@@ -32,7 +32,7 @@
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     LocationCell *locationCell = (LocationCell *)cell;
-    phLocation *location = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    Location *location = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     if ([location.locationDescription length] > 0) {
         locationCell.descriptionLabel.text = location.locationDescription;
@@ -119,7 +119,7 @@
         controller.managedObjectContext = self.managedObjectContext;
         
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-        phLocation *location = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        Location *location = [self.fetchedResultsController objectAtIndexPath:indexPath];
         controller.locationToEdit = location;
     }
 }
@@ -189,7 +189,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        phLocation *location = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        Location *location = [self.fetchedResultsController objectAtIndexPath:indexPath];
         [self.managedObjectContext deleteObject:location];
         
         NSError *error;

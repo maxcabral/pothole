@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "phLocation.h"
+#import "Location.h"
 
 @class Location;
 
@@ -21,7 +21,7 @@
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;
 @property (nonatomic, strong) CLPlacemark *placemark;
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, strong) phLocation *locationToEdit;
+@property (nonatomic, strong) Location *locationToEdit;
 
 - (IBAction)done:(id)sender;
 - (IBAction)cancel:(id)sender;
