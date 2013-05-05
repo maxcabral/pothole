@@ -203,7 +203,6 @@
                 performingReverseGeocoding = NO;
                 [self stopLocationManager];
                 [self updateLabels];
-                placemark = nil;
                 [hudView hide:YES];
             }];
         }
