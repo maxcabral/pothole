@@ -9,7 +9,9 @@
 #import "phViewController.h"
 #import "phLosAngelesSubmission.h"
 #import "phdetailsViewController.h"
+#import "MBProgressHUD.h"
 #import <MessageUI/MessageUI.h>
+
 
 @interface phViewController()
 
@@ -27,6 +29,7 @@
     BOOL performingReverseGeocoding;
     NSError *lastGeocodingError;
     phLosAngelesSubmission *laSubmission;
+    MBProgressHUD *hudView;
 }
 
 @synthesize addressLabel, tagButton, emailButton, managedObjectContext;
@@ -47,6 +50,10 @@
 
 {
     if (!updatingLocation) {
+        hudView = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hudView.labelText = @"Processing";
+        
+
         self.addressLabel.text = @"Searching for Address...";
         location = nil;
         lastLocationError = nil;
@@ -197,6 +204,7 @@
                 [self stopLocationManager];
                 [self updateLabels];
                 placemark = nil;
+                [hudView hide:YES];
             }];
         }
 

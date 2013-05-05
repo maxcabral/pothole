@@ -17,6 +17,7 @@
 		503A91F41736378E009FE49D /* phViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A91F11736378E009FE49D /* phViewController.m */; };
 		503A91F91736380D009FE49D /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 503A91F51736380D009FE49D /* DataModel.xcdatamodeld */; };
 		503A91FA1736380D009FE49D /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A91F81736380D009FE49D /* Location.m */; };
+		503A91FF1736DA25009FE49D /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A91FE1736DA25009FE49D /* MBProgressHUD.m */; };
 		50CEC7141735936D007ADC0B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7131735936D007ADC0B /* UIKit.framework */; };
 		50CEC7161735936D007ADC0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7151735936D007ADC0B /* Foundation.framework */; };
 		50CEC7181735936D007ADC0B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7171735936D007ADC0B /* CoreGraphics.framework */; };
@@ -33,10 +34,8 @@
 		50CEC7421735936D007ADC0B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50CEC7401735936D007ADC0B /* InfoPlist.strings */; };
 		50CEC7451735936D007ADC0B /* Pothole_ReportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CEC7441735936D007ADC0B /* Pothole_ReportTests.m */; };
 		F65084D01735A2C700D93C90 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F65084CF1735A2C700D93C90 /* CoreLocation.framework */; };
-		F65084D61735CBA000D93C90 /* HudView.m in Sources */ = {isa = PBXBuildFile; fileRef = F65084D51735CBA000D93C90 /* HudView.m */; };
 		F665E0C71735FBE40081F40A /* LocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F665E0C61735FBE40081F40A /* LocationCell.m */; };
 		F665E0C917364AE90081F40A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F665E0C817364AE90081F40A /* MapKit.framework */; };
-		F67DD7D41735DA990003BFE1 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = F67DD7D31735DA990003BFE1 /* Location.m */; };
 		F6FB10C917365499009BD515 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FB10C817365499009BD515 /* MapViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +67,8 @@
 		503A91F61736380D009FE49D /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		503A91F71736380D009FE49D /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		503A91F81736380D009FE49D /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		503A91FC1736D924009FE49D /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = SupportingFiles/MBProgressHUD.h; sourceTree = "<group>"; };
+		503A91FE1736DA25009FE49D /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = SupportingFiles/MBProgressHUD.m; sourceTree = "<group>"; };
 		50CEC7101735936D007ADC0B /* Pothole Report.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pothole Report.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CEC7131735936D007ADC0B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		50CEC7151735936D007ADC0B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -89,13 +90,9 @@
 		50CEC7431735936D007ADC0B /* Pothole_ReportTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pothole_ReportTests.h; sourceTree = "<group>"; };
 		50CEC7441735936D007ADC0B /* Pothole_ReportTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pothole_ReportTests.m; sourceTree = "<group>"; };
 		F65084CF1735A2C700D93C90 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		F65084D41735CBA000D93C90 /* HudView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HudView.h; sourceTree = "<group>"; };
-		F65084D51735CBA000D93C90 /* HudView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HudView.m; sourceTree = "<group>"; };
 		F665E0C51735FBE40081F40A /* LocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationCell.h; sourceTree = "<group>"; };
 		F665E0C61735FBE40081F40A /* LocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationCell.m; sourceTree = "<group>"; };
 		F665E0C817364AE90081F40A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		F67DD7D21735DA990003BFE1 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
-		F67DD7D31735DA990003BFE1 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 		F6FB10C717365499009BD515 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		F6FB10C817365499009BD515 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -201,14 +198,6 @@
 				50CEC72B1735936D007ADC0B /* MainStoryboard.storyboard */,
 				F6FB10C717365499009BD515 /* MapViewController.h */,
 				F6FB10C817365499009BD515 /* MapViewController.m */,
-				F665E0C21735F65E0081F40A /* HolesViewController.h */,
-				F665E0C31735F65E0081F40A /* HolesViewController.m */,
-				50CEC72E1735936D007ADC0B /* phViewController.h */,
-				50CEC72F1735936D007ADC0B /* phViewController.m */,
-				F65084D11735B5ED00D93C90 /* phdetailsViewController.h */,
-				F65084D21735B5ED00D93C90 /* phdetailsViewController.m */,
-				F65084D41735CBA000D93C90 /* HudView.h */,
-				F65084D51735CBA000D93C90 /* HudView.m */,
 				50CEC71A1735936D007ADC0B /* Supporting Files */,
 			);
 			path = "Pothole Report";
@@ -217,6 +206,8 @@
 		50CEC71A1735936D007ADC0B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				503A91FE1736DA25009FE49D /* MBProgressHUD.m */,
+				503A91FC1736D924009FE49D /* MBProgressHUD.h */,
 				50CEC71B1735936D007ADC0B /* Pothole Report-Info.plist */,
 				50CEC71C1735936D007ADC0B /* InfoPlist.strings */,
 				50CEC71F1735936D007ADC0B /* main.m */,
@@ -365,7 +356,6 @@
 				50CEC7241735936D007ADC0B /* phAppDelegate.m in Sources */,
 				502D8D5E1735A7FE00AD11AE /* phLosAngelesSubmission.m in Sources */,
 				502D8D5F1735A7FE00AD11AE /* phSubmission.m in Sources */,
-				F65084D61735CBA000D93C90 /* HudView.m in Sources */,
 				F665E0C71735FBE40081F40A /* LocationCell.m in Sources */,
 				F6FB10C917365499009BD515 /* MapViewController.m in Sources */,
 				503A91F21736378E009FE49D /* HolesViewController.m in Sources */,
@@ -373,6 +363,7 @@
 				503A91F41736378E009FE49D /* phViewController.m in Sources */,
 				503A91F91736380D009FE49D /* DataModel.xcdatamodeld in Sources */,
 				503A91FA1736380D009FE49D /* Location.m in Sources */,
+				503A91FF1736DA25009FE49D /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +475,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pothole Report/Pothole Report-Prefix.pch";
 				INFOPLIST_FILE = "Pothole Report/Pothole Report-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Pothole Report/SupportingFiles\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -495,6 +490,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pothole Report/Pothole Report-Prefix.pch";
 				INFOPLIST_FILE = "Pothole Report/Pothole Report-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Pothole Report/SupportingFiles\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

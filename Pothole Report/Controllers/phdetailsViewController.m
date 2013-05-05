@@ -7,7 +7,7 @@
 //
 
 
-#import "HudView.h"
+#import "MBProgressHUD.h"
 #import "phViewController.h"
 #import "phdetailsViewController.h"
 #import "Location.h"
@@ -60,15 +60,16 @@
 
 - (IBAction)done:(id)sender
 {
-    HudView *hudView = [HudView hudInView:self.navigationController.view animated:YES];
-
+    MBProgressHUD *hudView = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    [hudView setMode:MBProgressHUDModeText];
+    
     Location *location = nil;
     
     if (self.locationToEdit !=nil) {
-        hudView.text = @"Updated";
+        hudView.labelText = @"Updated";
         location = self.locationToEdit;
     } else {
-        hudView.text = @"Tagged";
+        hudView.labelText = @"Tagged";
         location = [NSEntityDescription insertNewObjectForEntityForName:@"Location" inManagedObjectContext:self.managedObjectContext];
     }
     
@@ -84,7 +85,7 @@
         return;
     }
     
-    [self performSelector:@selector(closeScreen) withObject:nil afterDelay:0.6];
+    [self performSelector:@selector(closeScreen) withObject:nil afterDelay:0.3];
 }
 
 - (IBAction)cancel:(id)sender
