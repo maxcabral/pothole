@@ -28,6 +28,8 @@
 		F65084D01735A2C700D93C90 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F65084CF1735A2C700D93C90 /* CoreLocation.framework */; };
 		F65084D31735B5ED00D93C90 /* phdetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F65084D21735B5ED00D93C90 /* phdetailsViewController.m */; };
 		F65084D61735CBA000D93C90 /* HudView.m in Sources */ = {isa = PBXBuildFile; fileRef = F65084D51735CBA000D93C90 /* HudView.m */; };
+		F65084D91735D82200D93C90 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F65084D71735D82200D93C90 /* DataModel.xcdatamodeld */; };
+		F67DD7D41735DA990003BFE1 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = F67DD7D31735DA990003BFE1 /* Location.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,9 @@
 		F65084D21735B5ED00D93C90 /* phdetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = phdetailsViewController.m; sourceTree = "<group>"; };
 		F65084D41735CBA000D93C90 /* HudView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HudView.h; sourceTree = "<group>"; };
 		F65084D51735CBA000D93C90 /* HudView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HudView.m; sourceTree = "<group>"; };
+		F65084D81735D82200D93C90 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		F67DD7D21735DA990003BFE1 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		F67DD7D31735DA990003BFE1 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +118,9 @@
 		50CEC7071735936D007ADC0B = {
 			isa = PBXGroup;
 			children = (
+				F67DD7D21735DA990003BFE1 /* Location.h */,
+				F67DD7D31735DA990003BFE1 /* Location.m */,
+				F65084D71735D82200D93C90 /* DataModel.xcdatamodeld */,
 				F65084CF1735A2C700D93C90 /* CoreLocation.framework */,
 				50CEC7191735936D007ADC0B /* Pothole Report */,
 				50CEC73D1735936D007ADC0B /* Pothole ReportTests */,
@@ -310,6 +318,8 @@
 				502D8D5F1735A7FE00AD11AE /* phSubmission.m in Sources */,
 				F65084D31735B5ED00D93C90 /* phdetailsViewController.m in Sources */,
 				F65084D61735CBA000D93C90 /* HudView.m in Sources */,
+				F65084D91735D82200D93C90 /* DataModel.xcdatamodeld in Sources */,
+				F67DD7D41735DA990003BFE1 /* Location.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +512,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F65084D71735D82200D93C90 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F65084D81735D82200D93C90 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = F65084D81735D82200D93C90 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 50CEC7081735936D007ADC0B /* Project object */;
 }

@@ -72,7 +72,7 @@
 - (void)configureGetButton
 {
     if (updatingLocation) {
-        [self.getButton setTitle:@"Stop" forState:UIControlStateNormal];
+        [self.getButton setTitle:@"POT HOLE" forState:UIControlStateNormal];
     } else {
         [self.getButton setTitle:@"POT HOLE!" forState:UIControlStateNormal];
     }
