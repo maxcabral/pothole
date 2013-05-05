@@ -21,6 +21,7 @@
 @property (nonatomic, strong) CLPlacemark *placemark;
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
+
 @property (nonatomic, strong) Location *locationToEdit;
 
 

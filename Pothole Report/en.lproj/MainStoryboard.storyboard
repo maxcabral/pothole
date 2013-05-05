@@ -9,8 +9,11 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="h4f-Wh-6lT" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="SPOT!" id="HIR-5U-2cJ"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZxK-Jx-tjs">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="ZxK-Jx-tjs">
+                        <rect key="frame" x="0.0" y="-44" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -26,7 +29,10 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="QFD-Oy-k2u" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="History" id="VSd-DW-sAg"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tbW-Qe-TeD">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="tbW-Qe-TeD">
+                        <rect key="frame" x="0.0" y="-44" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -207,7 +213,7 @@
                                 <action selector="showEmail:" destination="2" id="T74-jU-wG6"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="+ Detailed" id="QnF-ds-d8h">
+                        <barButtonItem key="rightBarButtonItem" title="+Save in History" id="QnF-ds-d8h">
                             <connections>
                                 <segue destination="vCF-Ve-cjk" kind="modal" identifier="TagPothole" id="04b-Ys-NKy"/>
                             </connections>
@@ -402,7 +408,7 @@
                                 <action selector="cancel:" destination="Oyt-4B-QfB" id="o9z-yv-t21"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Tag" id="7KW-hc-TxZ">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="7KW-hc-TxZ">
                             <connections>
                                 <action selector="done:" destination="Oyt-4B-QfB" id="2Cv-mn-nZw"/>
                             </connections>
@@ -426,7 +432,9 @@
                 <navigationController id="vCF-Ve-cjk" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Yif-Ea-lov"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tbf-ac-vSo">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="Tbf-ac-vSo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -440,12 +448,54 @@
             <point key="canvasLocation" x="103" y="799"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="HolesViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HolesViewController.h"/>
+        </class>
+        <class className="LocationCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LocationCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="descriptionLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="showLocations"/>
+                <relationship kind="action" name="showUser"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="phViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/phViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="getphLocation:"/>
+                <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="emailButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="getButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="tagButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="phdetailsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/phdetailsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel:"/>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="descriptionTextView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="latitudeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="longitudeLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="nnm-BL-alp"/>
+        <segue reference="04b-Ys-NKy"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -15,6 +15,7 @@
 @dynamic date;
 @dynamic locationDescription;
 @dynamic placemark;
+@dynamic post;
 
 
 - (CLLocationCoordinate2D)coordinate

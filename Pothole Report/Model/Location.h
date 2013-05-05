@@ -17,5 +17,6 @@
 @property (nonatomic, retain) NSString * locationDescription;
 @property (nonatomic, retain) NSNumber * longitude;
 @property (nonatomic, retain) CLPlacemark *placemark;
+@property (nonatomic) BOOL post;
 
 @end
