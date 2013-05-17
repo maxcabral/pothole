@@ -16,20 +16,11 @@
 
 @interface phViewController()
 
-- (void)updateLabels;
-
 @end
 
 @implementation phViewController {
     CLLocationManager *locationManager;
-    CLLocation *location;
-    BOOL updatingLocation;
-    NSError *lastLocationError;
     CLGeocoder *geocoder;
-    CLPlacemark *placemark;
-    BOOL performingReverseGeocoding;
-    NSError *lastGeocodingError;
-    phLosAngelesSubmission *laSubmission;
     MBProgressHUD *hudView;
     NSMutableArray *mutableFetchResults;
 }
@@ -42,29 +33,20 @@
         UINavigationController *navigationController = segue.destinationViewController;
         phdetailsViewController *controller = (phdetailsViewController *)navigationController.topViewController;
         controller.managedObjectContext = self.managedObjectContext;
-        controller.coordinate = location.coordinate;
-        controller.placemark = placemark;
+        //controller.coordinate = location.coordinate;
+        //controller.placemark = placemark;
         
     }
 }
 
 - (IBAction)getphLocation:(id)sender
-
 {
-    if (!updatingLocation) {
-        hudView = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        hudView.labelText = @"Processing";
+    hudView = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hudView.labelText = @"Processing";
 
-        self.addressLabel.text = @"Searching for Address...";
-        location = nil;
-        lastLocationError = nil;
-        placemark = nil;
-        lastGeocodingError = nil;
-        NSLog(@"%@",@"Starting manager");
-        [self startLocationManager];
-    }
-    
-    [self updateLabels];
+    self.addressLabel.text = @"Searching for Address...";
+    NSLog(@"%@",@"Starting manager");
+    [self startLocationManager];
 }
 
 
@@ -81,41 +63,35 @@
             thePlacemark.postalCode];
 }
 
-- (void)updateLabels
+- (void)updateLabelsWithMessage:(NSString*)message
 {
-    if (location != nil) {
-        
-        if (placemark !=nil) {
-            self.addressLabel.text = [self stringFromPlacemark:placemark];
-        } else if (lastGeocodingError != nil) {
-            self.addressLabel.text = @"Error Finding Address";
-        } else if (lastLocationError != nil) {
-            if ([lastLocationError.domain isEqualToString:kCLErrorDomain] && lastLocationError.code == kCLErrorDenied) {
-                self.addressLabel.text = @"Location Services Disabled";
-            } else {
-                self.addressLabel.text = @"Error Getting Location";
-            }
-        } else if (![CLLocationManager locationServicesEnabled]) {
-            self.addressLabel.text = @"Location Services Disabled";
-        }
-        
+    if (message){
+        self.addressLabel.text = message;
+    } else {
+        self.addressLabel.text = @"Processing...";
     }
 }
 
-- (void)savePothole
+- (void)updateLabelsWithLocation:(Location *)newLocation
 {
-    Location *potholeLocation = [NSEntityDescription insertNewObjectForEntityForName:@"Location" inManagedObjectContext:self.managedObjectContext];
-
-    potholeLocation.locationDescription = [self stringFromPlacemark:placemark];
-    potholeLocation.latitude = [NSNumber numberWithDouble:location.coordinate.latitude];
-    potholeLocation.longitude = [NSNumber numberWithDouble:location.coordinate.longitude];
-    potholeLocation.date = [NSDate date];
-    potholeLocation.placemark = placemark;
-    
-    NSError *error;
-    if (![self.managedObjectContext save:&error]) {
-        FATAL_CORE_DATA_ERROR(error);
-        return;
+    if (newLocation != nil) {
+        
+        if (newLocation.placemark != nil) {
+            self.addressLabel.text = [self stringFromPlacemark:newLocation.placemark];
+        } else if (newLocation.latitude != nil){
+            self.addressLabel.text = [NSString stringWithFormat:@"%@.4 x %@.4",newLocation.latitude,newLocation.longitude];
+        } else {
+            self.addressLabel.text = @"Unable to Save Pothole";
+        }
+        
+    } else {
+        
+        if (![CLLocationManager locationServicesEnabled]) {
+            self.addressLabel.text = @"Location Services Disabled";
+        } else {
+            self.addressLabel.text = @"Unable to Save Pothole";
+        }
+        
     }
 }
 
@@ -123,33 +99,22 @@
 {
     if ([CLLocationManager locationServicesEnabled]) {
         [locationManager startUpdatingLocation];
-        updatingLocation = YES;
-        
         [self performSelector:@selector(didTimeOut:) withObject:nil afterDelay:60];
     }
 }
 
 - (void)stopLocationManager
 {
-    if (updatingLocation) {
-        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(didTimeOut:) object:nil];
-        
-        [locationManager stopUpdatingLocation];
-        updatingLocation = NO;
-    }
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(didTimeOut:) object:nil];
+    [locationManager stopUpdatingLocation];
 }
 
 - (void)didTimeOut:(id)obj
 {
     NSLog(@"*** Time out");
+    [self stopLocationManager];
     
-    if (location == nil) {
-        [self stopLocationManager];
-        
-        lastLocationError = [NSError errorWithDomain:@"MyLocationsErrorDomain" code:1 userInfo:nil];
-        
-        [self updateLabels];
-    }
+    [self updateLabelsWithMessage:@"Location Services Timed Out"];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -167,9 +132,6 @@
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]]];
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
-    laSubmission = [[phLosAngelesSubmission alloc] init];
-    laSubmission.delegate = (id)self;
-    [self updateLabels];
 }
 
 #pragma mark - CLLocationManagerDelegate
@@ -183,54 +145,34 @@
     }
     
     [self stopLocationManager];
-    lastLocationError = error;
-    
-    [self updateLabels];
+    [self updateLabelsWithMessage:@"Unable to fix location"];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
+    [self stopLocationManager];
+    
     NSLog(@"didUpdateToLocation %@", newLocation);
     
-    CLLocationDistance distance = MAXFLOAT;
-    if (location != nil) {
-        distance = [newLocation distanceFromLocation:location];
-    }
+    [self updateLabelsWithMessage:nil];
     
-    if (location == nil || location.horizontalAccuracy > newLocation.horizontalAccuracy) {
-        
-        location = newLocation;
-        [self updateLabels];
-        
-        [self stopLocationManager];
 
-        NSLog(@"*** Going to geocode");
+    NSLog(@"*** Going to geocode");
+    
+    [geocoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+        NSLog(@"*** Found placemarks: %@, error: %@", placemarks, error);
+        Location *newLocationModel;
         
-        if (!performingReverseGeocoding){
-            performingReverseGeocoding = YES;
-            [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
-                NSLog(@"*** Found placemarks: %@, error: %@", placemarks, error);
-                
-                lastGeocodingError = error;
-                if (error == nil && [placemarks count] > 0) {
-                    placemark = [placemarks lastObject];
-                } else {
-                    placemark = nil;
-                }
-                
-                performingReverseGeocoding = NO;
-                [self stopLocationManager];
-                [self updateLabels];
-                [self savePothole];
-                [hudView hide:YES];
-            }];
+        if (error == nil && [placemarks count] > 0) {
+            newLocationModel = [Location locationFromCLLocation:newLocation andPlaceMark:[placemarks lastObject]];
+        } else {
+            newLocationModel = [Location locationFromCLLocation:newLocation andPlaceMark:nil];
         }
-
         
-        [self updateLabels];
+        [self updateLabelsWithLocation:newLocationModel];
         
-        
-    }
+        [hudView hide:YES];
+    }];
 }
 
 @end

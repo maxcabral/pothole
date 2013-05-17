@@ -22,6 +22,7 @@
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
 - (void)setCoordinate:(CLLocationCoordinate2D)newCoordinate;
 
++ (Location *)locationFromCLLocation:(CLLocation *)location andPlaceMark:placemark;
 + (NSString *)stringFromPlacemark:(CLPlacemark *)thePlacemark;
 + (NSString *)printableDescription:(NSManagedObject*)managedObj;
 - (NSString *)description;

@@ -7,6 +7,7 @@
 //
 
 #import "Location.h"
+#import "phAppDelegate.h"
 
 @interface Location ()
 
@@ -65,6 +66,24 @@
             thePlacemark.subThoroughfare, thePlacemark.thoroughfare,
             thePlacemark.locality, thePlacemark.administrativeArea,
             thePlacemark.postalCode];
+}
+
++ (Location *)locationFromCLLocation:(CLLocation *)location andPlaceMark:placemark;
+{
+    NSManagedObjectContext *context = ((phAppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
+    Location *potholeLocation = [NSEntityDescription insertNewObjectForEntityForName:@"Location" inManagedObjectContext: context ];
+    
+    potholeLocation.locationDescription = [self stringFromPlacemark:placemark];
+    potholeLocation.latitude = [NSNumber numberWithDouble:location.coordinate.latitude];
+    potholeLocation.longitude = [NSNumber numberWithDouble:location.coordinate.longitude];
+    potholeLocation.date = [NSDate date];
+    potholeLocation.placemark = placemark;
+    
+    NSError *error;
+    if (![context save:&error]) {
+        FATAL_CORE_DATA_ERROR(error);
+    }
+    return potholeLocation;
 }
 
 
