@@ -12,7 +12,9 @@
 #import "MapViewController.h"
 
 @interface phAppDelegate ()
-
+{
+    int errorCount;
+}
 @end
 
 @implementation phAppDelegate
@@ -33,7 +35,7 @@
     MapViewController *mapViewController = (MapViewController *)[[tabBarController viewControllers] objectAtIndex:2];
     mapViewController.managedObjectContext = self.managedObjectContext;
     
-
+    errorCount = 0;
     
     return YES;
 }
@@ -119,12 +121,22 @@
 
 - (void)fatalCoreDataError:(NSError *)error
 {
-    UIAlertView *alertView = [[UIAlertView alloc]
-                              initWithTitle:NSLocalizedString(@"Internal Error", nil)
-                              message:NSLocalizedString(@"There was a fatal error in the app and it cannot continue.\n\nPress OK to terminate the app. Sorry for the inconvenience.", nil)
-                              delegate:self
-                              cancelButtonTitle:NSLocalizedString(@"OK", nil)
-                              otherButtonTitles:nil];
+    UIAlertView *alertView;
+    if (++errorCount < 3){
+        alertView = [[UIAlertView alloc]
+                      initWithTitle:NSLocalizedString(@"Internal Error", nil)
+                      message:NSLocalizedString(@"There was an error saving the PotHole. It will not be available later. If the error persists try quitting the program and reopening it.", nil)
+                      delegate:self
+                      cancelButtonTitle:NSLocalizedString(@"OK", nil)
+                      otherButtonTitles:nil];
+    } else {
+        alertView = [[UIAlertView alloc]
+                     initWithTitle:NSLocalizedString(@"Internal Error", nil)
+                     message:NSLocalizedString(@"Three critical errors have been detected. The application must exit.", nil)
+                     delegate:self
+                     cancelButtonTitle:NSLocalizedString(@"OK", nil)
+                     otherButtonTitles:nil];
+    }
     
     [alertView show];
 }
@@ -133,7 +145,9 @@
 
 - (void)alertView:(UIAlertView *)theAlertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-    abort();
+    if (errorCount >= 3){
+        abort();
+    }
 }
 
 @end

@@ -55,14 +55,6 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (NSString *)stringFromPlacemark:(CLPlacemark *)thePlacemark
-{
-    return [NSString stringWithFormat:@"%@ %@\n%@ %@ %@",
-            thePlacemark.subThoroughfare, thePlacemark.thoroughfare,
-            thePlacemark.locality, thePlacemark.administrativeArea,
-            thePlacemark.postalCode];
-}
-
 - (void)updateLabelsWithMessage:(NSString*)message
 {
     if (message){
@@ -77,7 +69,7 @@
     if (newLocation != nil) {
         
         if (newLocation.placemark != nil) {
-            self.addressLabel.text = [self stringFromPlacemark:newLocation.placemark];
+            self.addressLabel.text = newLocation.locationDescription;
         } else if (newLocation.latitude != nil){
             self.addressLabel.text = [NSString stringWithFormat:@"%@.4 x %@.4",newLocation.latitude,newLocation.longitude];
         } else {

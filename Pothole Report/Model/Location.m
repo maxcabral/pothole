@@ -49,6 +49,32 @@
     return [Location printableDescription:self];
 }
 
+- (void)geoLocate:(void (^)(Location*))callback
+{
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    CLLocation *location = [[CLLocation alloc] initWithLatitude:[self.latitude doubleValue] longitude:[self.longitude doubleValue]];
+    [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
+        NSLog(@"*** Found placemarks: %@, error: %@", placemarks, error);
+        self.placemark = [placemarks lastObject];
+
+        NSError *saveError;
+        if (![[self managedObjectContext] save:&saveError]){
+            
+        }
+    }];
+}
+
+- (NSString *)placemarkDescription
+{
+    NSString *desc = [Location stringFromPlacemark:self.placemark];
+    
+    if ([desc isEqualToString:@" \n  "]){
+        desc = [NSString stringWithFormat:@"Unable to Geolocate. Coordinates - %@ x %@",self.latitude,self.longitude];
+    }
+    
+    return desc;
+}
+
 + (NSString *)printableDescription:(Location*)managedObj
 {
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
@@ -63,8 +89,10 @@
 + (NSString *)stringFromPlacemark:(CLPlacemark *)thePlacemark
 {
     return [NSString stringWithFormat:@"%@ %@\n%@ %@ %@",
-            thePlacemark.subThoroughfare, thePlacemark.thoroughfare,
-            thePlacemark.locality, thePlacemark.administrativeArea,
+            thePlacemark.subThoroughfare,
+            thePlacemark.thoroughfare,
+            thePlacemark.locality,
+            thePlacemark.administrativeArea,
             thePlacemark.postalCode];
 }
 
