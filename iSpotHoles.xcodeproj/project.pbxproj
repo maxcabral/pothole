@@ -44,6 +44,7 @@
 		F65084D01735A2C700D93C90 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F65084CF1735A2C700D93C90 /* CoreLocation.framework */; };
 		F665E0C71735FBE40081F40A /* LocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F665E0C61735FBE40081F40A /* LocationCell.m */; };
 		F665E0C917364AE90081F40A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F665E0C817364AE90081F40A /* MapKit.framework */; };
+		F6A36A59174C9F7700E3FAE1 /* NSMutableString+AddText.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A36A58174C9F7700E3FAE1 /* NSMutableString+AddText.m */; };
 		F6FB10C917365499009BD515 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FB10C817365499009BD515 /* MapViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +110,8 @@
 		F665E0C51735FBE40081F40A /* LocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationCell.h; sourceTree = "<group>"; };
 		F665E0C61735FBE40081F40A /* LocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationCell.m; sourceTree = "<group>"; };
 		F665E0C817364AE90081F40A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F6A36A57174C9F7700E3FAE1 /* NSMutableString+AddText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+AddText.h"; sourceTree = "<group>"; };
+		F6A36A58174C9F7700E3FAE1 /* NSMutableString+AddText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+AddText.m"; sourceTree = "<group>"; };
 		F6FB10C717365499009BD515 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		F6FB10C817365499009BD515 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,6 +167,8 @@
 				503A91EF1736378E009FE49D /* phdetailsViewController.m */,
 				503A91F01736378E009FE49D /* phViewController.h */,
 				503A91F11736378E009FE49D /* phViewController.m */,
+				F6A36A57174C9F7700E3FAE1 /* NSMutableString+AddText.h */,
+				F6A36A58174C9F7700E3FAE1 /* NSMutableString+AddText.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -404,6 +409,7 @@
 				503A91F91736380D009FE49D /* DataModel.xcdatamodeld in Sources */,
 				503A91FA1736380D009FE49D /* Location.m in Sources */,
 				503A91FF1736DA25009FE49D /* MBProgressHUD.m in Sources */,
+				F6A36A59174C9F7700E3FAE1 /* NSMutableString+AddText.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
