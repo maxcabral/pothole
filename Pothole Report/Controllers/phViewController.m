@@ -12,6 +12,7 @@
 #import "MBProgressHUD.h"
 #import <MessageUI/MessageUI.h>
 #import "Location.h"
+#import "NSMutableString+AddText.h"
 
 
 @interface phViewController()
@@ -48,7 +49,6 @@
     NSLog(@"%@",@"Starting manager");
     [self startLocationManager];
 }
-
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -160,6 +160,7 @@
         } else {
             newLocationModel = [Location locationFromCLLocation:newLocation andPlaceMark:nil];
         }
+
         
         [self updateLabelsWithLocation:newLocationModel];
         
@@ -199,7 +200,7 @@
     // Email Content
     NSString *messageBody = [self reportBody];
     // To address
-    NSArray *toRecipents = [NSArray arrayWithObject:@"max@maxcabral.com"];
+    NSArray *toRecipents = [NSArray arrayWithObject:@"bss.boss@lacity.org"];
     
     MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
     mc.mailComposeDelegate = (id)self;
