@@ -61,6 +61,7 @@
         NSLog(@"*** Found placemarks: %@, error: %@", placemarks, error);
         if (error == nil && [placemarks count] > 0) {
             self.placemark = [placemarks lastObject];
+            self.locationDescription = [Location stringFromPlacemark:self.placemark];
         }
 
         NSError *saveError;
