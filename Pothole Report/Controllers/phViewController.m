@@ -132,12 +132,9 @@
 {
     NSLog(@"didFailWithError %@", error);
     
-    if (error.code == kCLErrorLocationUnknown) {
-        return;
-    }
-    
     [self stopLocationManager];
     [self updateLabelsWithMessage:@"Unable to fix location"];
+    [hudView hide:YES];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
