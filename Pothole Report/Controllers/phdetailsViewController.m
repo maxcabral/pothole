@@ -90,6 +90,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"ps_neutral"]]];
     
     [self setLabels];
     
@@ -159,7 +160,7 @@
     
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width,40.0)];
     UILabel *headerLeftLabel = [[UILabel alloc] initWithFrame:CGRectMake(20.0, _labelY, 100.0,20.0)];
-
+    [headerLeftLabel setFont:[UIFont fontWithName:@"Thonburi-Bold" size:20.0]];
     
     headerLeftLabel.backgroundColor = [UIColor clearColor];
     

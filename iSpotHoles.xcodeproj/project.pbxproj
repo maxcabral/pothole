@@ -31,6 +31,9 @@
 		5095B83917370D400044AC21 /* list_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5095B83817370D400044AC21 /* list_icon.png */; };
 		50C66A3417598961009F817D /* NSMutableString+AddText.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C66A3317598961009F817D /* NSMutableString+AddText.m */; };
 		50C66A3517598A24009F817D /* NSMutableString+AddText.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C66A3317598961009F817D /* NSMutableString+AddText.m */; };
+		50C66A3D1759D671009F817D /* ps_neutral_@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 50C66A3B1759D671009F817D /* ps_neutral_@2X.png */; };
+		50C66A3E1759D671009F817D /* ps_neutral.png in Resources */ = {isa = PBXBuildFile; fileRef = 50C66A3C1759D671009F817D /* ps_neutral.png */; };
+		50C66A401759D6F4009F817D /* background_@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 50C66A3F1759D6F4009F817D /* background_@2X.png */; };
 		50CEC7141735936D007ADC0B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7131735936D007ADC0B /* UIKit.framework */; };
 		50CEC7161735936D007ADC0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7151735936D007ADC0B /* Foundation.framework */; };
 		50CEC7181735936D007ADC0B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7171735936D007ADC0B /* CoreGraphics.framework */; };
@@ -92,6 +95,9 @@
 		5095B83817370D400044AC21 /* list_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = list_icon.png; path = "Pothole Images/list_icon.png"; sourceTree = "<group>"; };
 		50C66A3217598961009F817D /* NSMutableString+AddText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableString+AddText.h"; path = "SupportingFiles/NSMutableString+AddText.h"; sourceTree = "<group>"; };
 		50C66A3317598961009F817D /* NSMutableString+AddText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableString+AddText.m"; path = "SupportingFiles/NSMutableString+AddText.m"; sourceTree = "<group>"; };
+		50C66A3B1759D671009F817D /* ps_neutral_@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ps_neutral_@2X.png"; path = "Pothole Images/ps_neutral_@2X.png"; sourceTree = "<group>"; };
+		50C66A3C1759D671009F817D /* ps_neutral.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ps_neutral.png; path = "Pothole Images/ps_neutral.png"; sourceTree = "<group>"; };
+		50C66A3F1759D6F4009F817D /* background_@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background_@2X.png"; path = "Pothole Images/background_@2X.png"; sourceTree = "<group>"; };
 		50CEC7101735936D007ADC0B /* iSpotHoles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSpotHoles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CEC7131735936D007ADC0B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		50CEC7151735936D007ADC0B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -175,6 +181,9 @@
 		5095B82D1736FA8C0044AC21 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				50C66A3F1759D6F4009F817D /* background_@2X.png */,
+				50C66A3B1759D671009F817D /* ps_neutral_@2X.png */,
+				50C66A3C1759D671009F817D /* ps_neutral.png */,
 				5095B83817370D400044AC21 /* list_icon.png */,
 				5095B83617370D290044AC21 /* map_icon.png */,
 				5095B83417370D000044AC21 /* spot_icon.png */,
@@ -363,6 +372,9 @@
 				5095B83517370D000044AC21 /* spot_icon.png in Resources */,
 				5095B83717370D290044AC21 /* map_icon.png in Resources */,
 				5095B83917370D400044AC21 /* list_icon.png in Resources */,
+				50C66A3D1759D671009F817D /* ps_neutral_@2X.png in Resources */,
+				50C66A3E1759D671009F817D /* ps_neutral.png in Resources */,
+				50C66A401759D6F4009F817D /* background_@2X.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
