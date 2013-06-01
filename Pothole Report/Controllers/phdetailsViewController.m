@@ -13,9 +13,13 @@
 #import "Location.h"
 
 @interface phdetailsViewController () {
-    NSString *descriptionText;
-    NSDate *date;
+
 }
+@property (nonatomic, strong) IBOutlet UITextView *descriptionTextView;
+@property (nonatomic, strong) IBOutlet UILabel *latitudeLabel;
+@property (nonatomic, strong) IBOutlet UILabel *longitudeLabel;
+@property (nonatomic, strong) IBOutlet UILabel *addressLabel;
+@property (nonatomic, strong) IBOutlet UILabel *dateLabel;
 @end
 
 @implementation phdetailsViewController 
@@ -25,7 +29,6 @@
 @synthesize longitudeLabel;
 @synthesize addressLabel;
 @synthesize dateLabel;
-@synthesize coordinate;
 @synthesize managedObjectContext;
 @synthesize location;
 
@@ -33,8 +36,7 @@
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     if ((self = [super initWithCoder:aDecoder])) {
-        descriptionText = @"";
-        date = [NSDate date];
+
     }
     return self;
 }
@@ -88,20 +90,18 @@
 {
     [super viewDidLoad];
     
-    self.descriptionTextView.text = descriptionText;
-    self.dateLabel.text = [self formatDate:date];
-
+    self.descriptionTextView.text = location.description;
     
-    self.latitudeLabel.text = [NSString stringWithFormat:@"%.8f", self.coordinate.latitude];
-    self.longitudeLabel.text = [NSString stringWithFormat:@"%.8f", self.coordinate.longitude];
+    self.latitudeLabel.text = [NSString stringWithFormat:@"%@", self.location.latitude];
+    self.longitudeLabel.text = [NSString stringWithFormat:@"%@", self.location.longitude];
     
-    if (self.location != nil) {
+    if (self.location.placemark != nil) {
         self.addressLabel.text = [Location stringFromPlacemark:self.location.placemark];
     } else {
         self.addressLabel.text = @"No Address Found";
     }
     
-    self.dateLabel.text = [self formatDate:[NSDate date]];
+    self.dateLabel.text = [self formatDate:location.date];
     
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc]
                                                  initWithTarget:self action:@selector(hideKeyboard:)];
@@ -132,10 +132,6 @@
 {
     if (location != newlocation) {
         location = newlocation;
-        
-        descriptionText = location.description;
-        self.coordinate = CLLocationCoordinate2DMake([location.latitude doubleValue], [location.longitude doubleValue]);
-        date = location.date;
     }
 }
 
@@ -180,13 +176,13 @@
 
 - (BOOL)textView:(UITextView *)theTextView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
-    descriptionText = [theTextView.text stringByReplacingCharactersInRange:range withString:text];
+    //descriptionText = [theTextView.text stringByReplacingCharactersInRange:range withString:text];
     return YES;
 }
 
 - (void)textViewDidEndEditing:(UITextView *)theTextView
 {
-    descriptionText = theTextView.text;
+    //descriptionText = theTextView.text;
 }
 
 @end

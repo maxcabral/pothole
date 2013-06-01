@@ -12,13 +12,7 @@
 @class Location;
 
 @interface phdetailsViewController : UITableViewController <UITextViewDelegate>
-@property (nonatomic, strong) IBOutlet UITextView *descriptionTextView;
 
-@property (nonatomic, strong) IBOutlet UILabel *latitudeLabel;
-@property (nonatomic, strong) IBOutlet UILabel *longitudeLabel;
-@property (nonatomic, strong) IBOutlet UILabel *addressLabel;
-@property (nonatomic, strong) IBOutlet UILabel *dateLabel;
-@property (nonatomic, assign) CLLocationCoordinate2D coordinate;
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) Location *location;
 
