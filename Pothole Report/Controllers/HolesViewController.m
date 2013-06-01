@@ -79,7 +79,7 @@
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"Location" inManagedObjectContext:self.managedObjectContext];
         [fetchRequest setEntity:entity];
         
-        NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES];
+        NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO];
         [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
         
         [fetchRequest setFetchBatchSize:20];
