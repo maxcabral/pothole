@@ -54,7 +54,10 @@
 {
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     CLLocation *location = [[CLLocation alloc] initWithLatitude:[self.latitude doubleValue] longitude:[self.longitude doubleValue]];
+    
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
         NSLog(@"*** Found placemarks: %@, error: %@", placemarks, error);
         self.placemark = [placemarks lastObject];
 

@@ -147,8 +147,9 @@
     
 
     NSLog(@"*** Going to geocode");
-    
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     [geocoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
         NSLog(@"*** Found placemarks: %@, error: %@", placemarks, error);
         Location *newLocationModel;
         
