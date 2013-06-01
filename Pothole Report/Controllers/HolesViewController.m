@@ -35,28 +35,7 @@
     LocationCell *locationCell = (LocationCell *)cell;
     Location *location = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    if ([location.locationDescription length] > 0) {
-        locationCell.descriptionLabel.text = location.locationDescription;
-    } else {
-        locationCell.descriptionLabel.text = @"(No Description)";
-    }
-    
-    if (location.placemark != nil) {
-        NSMutableString *string = [NSMutableString stringWithCapacity:100];
-        
-        [string addText:location.placemark.subThoroughfare withSeparator:@""];
-        [string addText:location.placemark.thoroughfare withSeparator:@" "];
-        [string addText:location.placemark.locality withSeparator:@", "];
-        
-        locationCell.addressLabel.text = string;
-        
-        
-    } else {
-        locationCell.addressLabel.text = [NSString stringWithFormat:
-                                          @"Lat: %.8f, Long: %.8f",
-                                          [location.latitude doubleValue],
-                                          [location.longitude doubleValue]];
-    }
+    [locationCell styleView:location];
 }
 
 

@@ -7,10 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Location.h"
 
 @interface LocationCell : UITableViewCell
-
-@property (nonatomic, strong) IBOutlet UILabel *descriptionLabel;
-@property (nonatomic, strong) IBOutlet UILabel *addressLabel;
-
+- (void)styleView:(Location*)location;
 @end
