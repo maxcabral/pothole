@@ -90,18 +90,7 @@
 {
     [super viewDidLoad];
     
-    self.descriptionTextView.text = location.description;
-    
-    self.latitudeLabel.text = [NSString stringWithFormat:@"%@", self.location.latitude];
-    self.longitudeLabel.text = [NSString stringWithFormat:@"%@", self.location.longitude];
-    
-    if (self.location.placemark != nil) {
-        self.addressLabel.text = [Location stringFromPlacemark:self.location.placemark];
-    } else {
-        self.addressLabel.text = @"No Address Found";
-    }
-    
-    self.dateLabel.text = [self formatDate:location.date];
+    [self setLabels];
     
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc]
                                                  initWithTarget:self action:@selector(hideKeyboard:)];
@@ -119,7 +108,7 @@
             if (saveError == nil){
                 NSLog(@"Updated geolocation");
                 if (self != nil) {
-                    [self performSelectorOnMainThread:@selector(setLocation:) withObject:thisLoc waitUntilDone:NO];
+                    [self performSelectorOnMainThread:@selector(setLabels) withObject:nil waitUntilDone:NO];
                 }
             } else {
 
@@ -128,11 +117,20 @@
     }
 }
 
-- (void)setLocation:(Location *)newlocation
+- (void)setLabels
 {
-    if (location != newlocation) {
-        location = newlocation;
+    self.descriptionTextView.text = self.location.description;
+    
+    self.latitudeLabel.text = [NSString stringWithFormat:@"%@", self.location.latitude];
+    self.longitudeLabel.text = [NSString stringWithFormat:@"%@", self.location.longitude];
+    
+    if (self.location.placemark != nil) {
+        self.addressLabel.text = [Location stringFromPlacemark:self.location.placemark];
+    } else {
+        self.addressLabel.text = @"No Address Found";
     }
+    
+    self.dateLabel.text = [self formatDate:location.date];
 }
 
 #pragma mark - UITableViewDelegate
@@ -141,16 +139,6 @@
 {
     if (indexPath.section == 0 && indexPath.row == 0) {
         return 120;
-    } else if (indexPath.section == 1 && indexPath.row == 2) {
-        
-        CGRect rect = CGRectMake(100, 10, 190, 1000);
-        self.addressLabel.frame = rect;
-        [self.addressLabel sizeToFit];
-        
-        rect.size.height = self.addressLabel.frame.size.height;
-        self.addressLabel.frame = rect;
-        
-        return self.addressLabel.frame.size.height + 20;
     } else {
         return 44;
     }
