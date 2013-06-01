@@ -68,7 +68,10 @@
         if (![[self managedObjectContext] save:&saveError]){
             
         }
-        callback(self,saveError);
+        
+        if (callback != nil){
+            callback(self,saveError);
+        }
     }];
 }
 
