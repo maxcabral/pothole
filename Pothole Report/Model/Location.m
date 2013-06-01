@@ -50,7 +50,7 @@
     return [Location printableDescription:self];
 }
 
-- (void)geoLocate:(void (^)(Location*))callback
+- (void)geoLocate:(void (^)(Location*,NSError*))callback
 {
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     CLLocation *location = [[CLLocation alloc] initWithLatitude:[self.latitude doubleValue] longitude:[self.longitude doubleValue]];
@@ -59,13 +59,15 @@
     [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
         NSLog(@"*** Found placemarks: %@, error: %@", placemarks, error);
-        self.placemark = [placemarks lastObject];
+        if (error == nil && [placemarks count] > 0) {
+            self.placemark = [placemarks lastObject];
+        }
 
         NSError *saveError;
         if (![[self managedObjectContext] save:&saveError]){
             
         }
-        callback(self);
+        callback(self,saveError);
     }];
 }
 
@@ -84,7 +86,7 @@
 {
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"YYYY-MM-DD"];
-    return [NSString stringWithFormat:@"Date: %@\nLat: %@ Long: %@\nApproximate Address: %@",
+    return [NSString stringWithFormat:@"Date: %@\nLat: %@\nLong: %@\nApproximate Address: %@",
             [dateFormat stringFromDate:managedObj.date],
             managedObj.latitude,
             managedObj.longitude,
@@ -109,7 +111,7 @@
     NSManagedObjectContext *context = ((phAppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
     Location *potholeLocation = [NSEntityDescription insertNewObjectForEntityForName:@"Location" inManagedObjectContext: context ];
     
-    potholeLocation.locationDescription = [self stringFromPlacemark:placemark];
+    potholeLocation.locationDescription = [Location stringFromPlacemark:placemark];
     potholeLocation.latitude = [NSNumber numberWithDouble:location.coordinate.latitude];
     potholeLocation.longitude = [NSNumber numberWithDouble:location.coordinate.longitude];
     potholeLocation.date = [NSDate date];

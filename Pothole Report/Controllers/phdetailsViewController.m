@@ -140,8 +140,17 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    if (self.location != nil){
-        
+    if (self.location != nil && self.location.placemark == nil){
+        [self.location performSelectorInBackground:@selector(geoLocate:) withObject:^(Location *thisLoc,NSError *saveError) {
+            if (saveError == nil){
+                NSLog(@"Updated geolocation");
+                if (self != nil) {
+                    [self performSelectorOnMainThread:@selector(setLocation:) withObject:thisLoc waitUntilDone:NO];
+                }
+            } else {
+
+            }
+        }];
     }
 }
 
@@ -150,7 +159,7 @@
     if (location != newlocation) {
         location = newlocation;
         
-        descriptionText = location.locationDescription;
+        descriptionText = location.description;
         self.coordinate = CLLocationCoordinate2DMake([location.latitude doubleValue], [location.longitude doubleValue]);
         date = location.date;
     }
