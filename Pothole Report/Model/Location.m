@@ -88,8 +88,13 @@
 
 + (NSString *)printableDescription:(Location*)managedObj
 {
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"YYYY-MM-DD"];
+    static NSDateFormatter *dateFormat = nil;
+    if (dateFormat == nil) {
+        dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateStyle:NSDateFormatterMediumStyle];
+        [dateFormat setTimeStyle:NSDateFormatterShortStyle];
+    }
+    
     return [NSString stringWithFormat:@"Date: %@\nLat: %@\nLong: %@\nApproximate Address: %@",
             [dateFormat stringFromDate:managedObj.date],
             managedObj.latitude,
