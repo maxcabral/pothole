@@ -126,7 +126,7 @@
         
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         Location *location = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        controller.locationToEdit = location;
+        controller.location = location;
     }
 }
 

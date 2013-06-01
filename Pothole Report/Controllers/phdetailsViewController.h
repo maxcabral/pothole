@@ -19,9 +19,8 @@
 @property (nonatomic, strong) IBOutlet UILabel *addressLabel;
 @property (nonatomic, strong) IBOutlet UILabel *dateLabel;
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;
-@property (nonatomic, strong) CLPlacemark *placemark;
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, strong) Location *locationToEdit;
+@property (nonatomic, strong) Location *location;
 
 - (IBAction)done:(id)sender;
 - (IBAction)cancel:(id)sender;

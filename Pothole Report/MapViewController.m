@@ -144,7 +144,7 @@
         controller.managedObjectContext = self.managedObjectContext;
         
         Location *location = [locations objectAtIndex:((UIButton *)sender).tag];
-        controller.locationToEdit = location;
+        controller.location = location;
     }
 }
 

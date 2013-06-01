@@ -26,9 +26,8 @@
 @synthesize addressLabel;
 @synthesize dateLabel;
 @synthesize coordinate;
-@synthesize placemark;
 @synthesize managedObjectContext;
-@synthesize locationToEdit;
+@synthesize location;
 
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -64,9 +63,9 @@
     
     Location *location = nil;
     
-    if (self.locationToEdit !=nil) {
+    if (self.location !=nil) {
         hudView.labelText = @"Updated";
-        location = self.locationToEdit;
+        location = self.location;
     } else {
         hudView.labelText = @"Tagged";
         location = [NSEntityDescription insertNewObjectForEntityForName:@"Location" inManagedObjectContext:self.managedObjectContext];
@@ -76,7 +75,6 @@
     location.latitude = [NSNumber numberWithDouble:self.coordinate.latitude];
     location.longitude = [NSNumber numberWithDouble:self.coordinate.longitude];
     location.date = date;
-    location.placemark = self.placemark;
     
     NSError *error;
     if (![self.managedObjectContext save:&error]) {
@@ -108,8 +106,8 @@
 {
     [super viewDidLoad];
     
-    if (self.locationToEdit != nil) {
-        self.title = @"Edit Location";
+    if (self.location != nil) {
+        self.title = @"Location Details";
         
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                                                                target:self
@@ -123,8 +121,8 @@
     self.latitudeLabel.text = [NSString stringWithFormat:@"%.8f", self.coordinate.latitude];
     self.longitudeLabel.text = [NSString stringWithFormat:@"%.8f", self.coordinate.longitude];
     
-    if (self.placemark != nil) {
-        self.addressLabel.text = [Location stringFromPlacemark:self.placemark];
+    if (self.location != nil) {
+        self.addressLabel.text = [Location stringFromPlacemark:self.location.placemark];
     } else {
         self.addressLabel.text = @"No Address Found";
     }
@@ -139,15 +137,22 @@
 
 }
 
-- (void)setLocationToEdit:(Location *)newLocationToEdit
+- (void)viewDidAppear:(BOOL)animated
 {
-    if (locationToEdit != newLocationToEdit) {
-        locationToEdit = newLocationToEdit;
+    [super viewDidAppear:animated];
+    if (self.location != nil){
         
-        descriptionText = locationToEdit.locationDescription;
-        self.coordinate = CLLocationCoordinate2DMake([locationToEdit.latitude doubleValue], [locationToEdit.longitude doubleValue]);
-        self.placemark = locationToEdit.placemark;
-        date = locationToEdit.date;
+    }
+}
+
+- (void)setLocation:(Location *)newlocation
+{
+    if (location != newlocation) {
+        location = newlocation;
+        
+        descriptionText = location.locationDescription;
+        self.coordinate = CLLocationCoordinate2DMake([location.latitude doubleValue], [location.longitude doubleValue]);
+        date = location.date;
     }
 }
 
