@@ -58,24 +58,6 @@
 
 - (IBAction)done:(id)sender
 {
-    MBProgressHUD *hudView = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
-    [hudView setMode:MBProgressHUDModeText];
-    
-    Location *location = nil;
-    
-    if (self.location !=nil) {
-        hudView.labelText = @"Updated";
-        location = self.location;
-    } else {
-        hudView.labelText = @"Tagged";
-        location = [NSEntityDescription insertNewObjectForEntityForName:@"Location" inManagedObjectContext:self.managedObjectContext];
-    }
-    
-    location.locationDescription = descriptionText;
-    location.latitude = [NSNumber numberWithDouble:self.coordinate.latitude];
-    location.longitude = [NSNumber numberWithDouble:self.coordinate.longitude];
-    location.date = date;
-    
     NSError *error;
     if (![self.managedObjectContext save:&error]) {
         FATAL_CORE_DATA_ERROR(error);
@@ -105,14 +87,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    if (self.location != nil) {
-        self.title = @"Location Details";
-        
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-                                                                                               target:self
-                                                                                               action:@selector(done:)];
-    }
     
     self.descriptionTextView.text = descriptionText;
     self.dateLabel.text = [self formatDate:date];
@@ -170,8 +144,8 @@
 - (CGFloat)tableView:(UITableView *)theTableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0 && indexPath.row == 0) {
-        return 88;
-    } else if (indexPath.section == 2 && indexPath.row == 2) {
+        return 120;
+    } else if (indexPath.section == 1 && indexPath.row == 2) {
         
         CGRect rect = CGRectMake(100, 10, 190, 1000);
         self.addressLabel.frame = rect;
