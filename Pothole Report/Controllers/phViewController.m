@@ -197,6 +197,28 @@
     NSString *emailTitle = @"Pothole report";
     // Email Content
     NSString *messageBody = [self reportBody];
+    // In case something goes wrong...
+    UIAlertView *emailErrorAlert;
+    
+    if (messageBody == nil){
+        emailErrorAlert = [[UIAlertView alloc] initWithTitle:@"Processing Error"
+                                                                  message:@"Sorry, I was unable to process your stored Potholes. Please try again.\n\nIf this error persists, you may want to quit and reopen the app."
+                                                                 delegate:nil
+                                                        cancelButtonTitle:@"OK"
+                                                        otherButtonTitles:nil];
+    } else if ([messageBody isEqualToString:@""]){
+        emailErrorAlert = [[UIAlertView alloc] initWithTitle:@"Nothing to Send"
+                                                                  message:@"Woohoo! You have no Potholes that need to be sent. That means they're being fixed, right?"
+                                                                 delegate:nil
+                                                        cancelButtonTitle:@"OK"
+                                                        otherButtonTitles:nil];
+    }
+    
+    //If we have an error to display, do it and return
+    if (emailErrorAlert != nil){
+        [emailErrorAlert show];
+        return;
+    }
     // To address
     NSArray *toRecipents = [NSArray arrayWithObject:@"bss.boss@lacity.org"];
     
@@ -217,7 +239,8 @@
 
     mutableFetchResults = [self getUnsentReports];
     if (mutableFetchResults == nil) {
-        // Handle the error.
+        // Handle the error in the caller.
+        return nil;
     } else {
         int cnt = 1;
         for (Location *locRecord in mutableFetchResults) {
