@@ -8,6 +8,7 @@
 
 #import "Location.h"
 #import "phAppDelegate.h"
+#import "NSMutableString+AddText.h"
 
 @interface Location ()
 
@@ -88,12 +89,15 @@
 
 + (NSString *)stringFromPlacemark:(CLPlacemark *)thePlacemark
 {
-    return [NSString stringWithFormat:@"%@ %@\n%@ %@ %@",
-            thePlacemark.subThoroughfare,
-            thePlacemark.thoroughfare,
-            thePlacemark.locality,
-            thePlacemark.administrativeArea,
-            thePlacemark.postalCode];
+    NSMutableString *line = [NSMutableString stringWithCapacity:100];
+    [line addText:thePlacemark.subThoroughfare withSeparator:@""];
+    [line addText:thePlacemark.thoroughfare withSeparator:@" "];
+    [line addText:thePlacemark.locality withSeparator:@", "];
+    [line addText:thePlacemark.administrativeArea withSeparator:@", "];
+    [line addText:thePlacemark.postalCode withSeparator:@" "];
+    [line addText:thePlacemark.country withSeparator:@", "];
+    
+    return [line copy];
 }
 
 + (Location *)locationFromCLLocation:(CLLocation *)location andPlaceMark:placemark;

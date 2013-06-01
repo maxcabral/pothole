@@ -11,7 +11,6 @@
 #import "phViewController.h"
 #import "phdetailsViewController.h"
 #import "Location.h"
-#import "NSMutableString+AddText.h"
 
 @interface phdetailsViewController () {
     NSString *descriptionText;
@@ -93,19 +92,6 @@
     [self closeScreen];
 }
 
-- (NSString *)stringFromPlacemark:(CLPlacemark *)thePlacemark
-{
-    NSMutableString *line = [NSMutableString stringWithCapacity:100];
-    [line addText:thePlacemark.subThoroughfare withSeparator:@""];
-    [line addText:thePlacemark.thoroughfare withSeparator:@" "];
-    [line addText:thePlacemark.locality withSeparator:@", "];
-    [line addText:thePlacemark.administrativeArea withSeparator:@", "];
-    [line addText:thePlacemark.postalCode withSeparator:@" "];
-    [line addText:thePlacemark.country withSeparator:@", "];
-    
-    return line;
-}
-
 - (NSString *)formatDate:(NSDate *)theDate
 {
     static NSDateFormatter *formatter = nil;
@@ -138,7 +124,7 @@
     self.longitudeLabel.text = [NSString stringWithFormat:@"%.8f", self.coordinate.longitude];
     
     if (self.placemark != nil) {
-        self.addressLabel.text = [self stringFromPlacemark:self.placemark];
+        self.addressLabel.text = [Location stringFromPlacemark:self.placemark];
     } else {
         self.addressLabel.text = @"No Address Found";
     }
