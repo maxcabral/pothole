@@ -30,6 +30,7 @@
 		5095B83717370D290044AC21 /* map_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5095B83617370D290044AC21 /* map_icon.png */; };
 		5095B83917370D400044AC21 /* list_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5095B83817370D400044AC21 /* list_icon.png */; };
 		50C66A3417598961009F817D /* NSMutableString+AddText.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C66A3317598961009F817D /* NSMutableString+AddText.m */; };
+		50C66A3517598A24009F817D /* NSMutableString+AddText.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C66A3317598961009F817D /* NSMutableString+AddText.m */; };
 		50CEC7141735936D007ADC0B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7131735936D007ADC0B /* UIKit.framework */; };
 		50CEC7161735936D007ADC0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7151735936D007ADC0B /* Foundation.framework */; };
 		50CEC7181735936D007ADC0B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7171735936D007ADC0B /* CoreGraphics.framework */; };
@@ -409,6 +410,7 @@
 				503A91F91736380D009FE49D /* DataModel.xcdatamodeld in Sources */,
 				503A91FA1736380D009FE49D /* Location.m in Sources */,
 				503A91FF1736DA25009FE49D /* MBProgressHUD.m in Sources */,
+				50C66A3517598A24009F817D /* NSMutableString+AddText.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
