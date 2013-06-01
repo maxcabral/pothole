@@ -29,6 +29,7 @@
 		5095B83517370D000044AC21 /* spot_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5095B83417370D000044AC21 /* spot_icon.png */; };
 		5095B83717370D290044AC21 /* map_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5095B83617370D290044AC21 /* map_icon.png */; };
 		5095B83917370D400044AC21 /* list_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5095B83817370D400044AC21 /* list_icon.png */; };
+		50C66A3417598961009F817D /* NSMutableString+AddText.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C66A3317598961009F817D /* NSMutableString+AddText.m */; };
 		50CEC7141735936D007ADC0B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7131735936D007ADC0B /* UIKit.framework */; };
 		50CEC7161735936D007ADC0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7151735936D007ADC0B /* Foundation.framework */; };
 		50CEC7181735936D007ADC0B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50CEC7171735936D007ADC0B /* CoreGraphics.framework */; };
@@ -44,7 +45,6 @@
 		F65084D01735A2C700D93C90 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F65084CF1735A2C700D93C90 /* CoreLocation.framework */; };
 		F665E0C71735FBE40081F40A /* LocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F665E0C61735FBE40081F40A /* LocationCell.m */; };
 		F665E0C917364AE90081F40A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F665E0C817364AE90081F40A /* MapKit.framework */; };
-		F6A36A59174C9F7700E3FAE1 /* NSMutableString+AddText.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A36A58174C9F7700E3FAE1 /* NSMutableString+AddText.m */; };
 		F6FB10C917365499009BD515 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6FB10C817365499009BD515 /* MapViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +89,8 @@
 		5095B83417370D000044AC21 /* spot_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spot_icon.png; path = "Pothole Images/spot_icon.png"; sourceTree = "<group>"; };
 		5095B83617370D290044AC21 /* map_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = map_icon.png; path = "Pothole Images/map_icon.png"; sourceTree = "<group>"; };
 		5095B83817370D400044AC21 /* list_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = list_icon.png; path = "Pothole Images/list_icon.png"; sourceTree = "<group>"; };
+		50C66A3217598961009F817D /* NSMutableString+AddText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableString+AddText.h"; path = "SupportingFiles/NSMutableString+AddText.h"; sourceTree = "<group>"; };
+		50C66A3317598961009F817D /* NSMutableString+AddText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableString+AddText.m"; path = "SupportingFiles/NSMutableString+AddText.m"; sourceTree = "<group>"; };
 		50CEC7101735936D007ADC0B /* iSpotHoles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSpotHoles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CEC7131735936D007ADC0B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		50CEC7151735936D007ADC0B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -110,8 +112,6 @@
 		F665E0C51735FBE40081F40A /* LocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationCell.h; sourceTree = "<group>"; };
 		F665E0C61735FBE40081F40A /* LocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationCell.m; sourceTree = "<group>"; };
 		F665E0C817364AE90081F40A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		F6A36A57174C9F7700E3FAE1 /* NSMutableString+AddText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+AddText.h"; sourceTree = "<group>"; };
-		F6A36A58174C9F7700E3FAE1 /* NSMutableString+AddText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+AddText.m"; sourceTree = "<group>"; };
 		F6FB10C717365499009BD515 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		F6FB10C817365499009BD515 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -167,8 +167,6 @@
 				503A91EF1736378E009FE49D /* phdetailsViewController.m */,
 				503A91F01736378E009FE49D /* phViewController.h */,
 				503A91F11736378E009FE49D /* phViewController.m */,
-				F6A36A57174C9F7700E3FAE1 /* NSMutableString+AddText.h */,
-				F6A36A58174C9F7700E3FAE1 /* NSMutableString+AddText.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -246,6 +244,8 @@
 		50CEC71A1735936D007ADC0B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				50C66A3217598961009F817D /* NSMutableString+AddText.h */,
+				50C66A3317598961009F817D /* NSMutableString+AddText.m */,
 				503A91FE1736DA25009FE49D /* MBProgressHUD.m */,
 				503A91FC1736D924009FE49D /* MBProgressHUD.h */,
 				50CEC71B1735936D007ADC0B /* iSpotHoles-Info.plist */,
@@ -409,7 +409,6 @@
 				503A91F91736380D009FE49D /* DataModel.xcdatamodeld in Sources */,
 				503A91FA1736380D009FE49D /* Location.m in Sources */,
 				503A91FF1736DA25009FE49D /* MBProgressHUD.m in Sources */,
-				F6A36A59174C9F7700E3FAE1 /* NSMutableString+AddText.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +417,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50CEC7451735936D007ADC0B /* Pothole_ReportTests.m in Sources */,
+				50C66A3417598961009F817D /* NSMutableString+AddText.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
