@@ -55,10 +55,10 @@
     }
     
     if (location.post) {
-        self.sentLabel.text = @"Sent";
+        self.sentLabel.text = @"Sent \u2714";
         self.sentLabel.textColor = [UIColor colorWithRed:0.351 green:0.793 blue:0.173 alpha:1.000];
     } else {
-        self.sentLabel.text = @"Not Sent";
+        self.sentLabel.text = @"Not Sent \u2718";
         self.sentLabel.textColor = [UIColor colorWithRed:0.793 green:0.362 blue:0.197 alpha:1.000];
     }
 }

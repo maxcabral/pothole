@@ -6,11 +6,12 @@
 //  Copyright (c) 2013 Pothole. All rights reserved.
 //
 
-
 #import "MBProgressHUD.h"
 #import "phViewController.h"
 #import "phdetailsViewController.h"
 #import "Location.h"
+
+#import <QuartzCore/QuartzCore.h>
 
 @interface phdetailsViewController () {
 
@@ -151,6 +152,65 @@
     } else {
         return nil;
     }
+}
+
+-(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    const float _labelY = 18.0;
+    
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width,40.0)];
+    UILabel *headerLeftLabel = [[UILabel alloc] initWithFrame:CGRectMake(20.0, _labelY, 100.0,20.0)];
+
+    
+    headerLeftLabel.backgroundColor = [UIColor clearColor];
+    
+
+    if (section == 0){
+        /*here we return a custom view for the header*/
+        headerLeftLabel.text = @"Description";
+        
+        NSString *postMessage;
+        float _rLabelX;
+        
+        if (self.location.post){
+            postMessage = @"Sent \u2714";
+            _rLabelX = tableView.bounds.size.width - 70.0;
+        } else {
+            postMessage = @"Not Sent \u2718";
+            _rLabelX = tableView.bounds.size.width - 110.0;
+        }
+        
+        UILabel *headerRightLabel = [[UILabel alloc] initWithFrame:CGRectMake(_rLabelX, _labelY, 90.0,20.0)];
+        headerRightLabel.backgroundColor = [UIColor clearColor];
+        headerRightLabel.text = postMessage;
+        
+        if (self.location.post){
+            headerRightLabel.textColor = [UIColor colorWithRed:0.351 green:0.793 blue:0.173 alpha:1.000];
+        } else {
+            headerRightLabel.textColor = [UIColor colorWithRed:0.793 green:0.362 blue:0.197 alpha:1.000];
+        }
+        
+        [headerView addSubview:headerRightLabel];
+        
+        /*I also want the header to throw a shadow on the rest of the table*/
+        /*headerview.layer.shadowColor = [[UIColor blackColor] CGColor];
+        headerview.layer.shadowOffset = CGSizeMake(0, 0);
+        headerview.layer.shadowOpacity = 0.5f;
+        headerview.layer.shadowRadius = 3.25f;
+        headerview.layer.masksToBounds = NO;*/
+    } else if (section == 1){
+        headerLeftLabel.text = @"Data";
+    } else {
+        headerLeftLabel.text = @"Customize Me";
+    }
+    
+    [headerView addSubview:headerLeftLabel];
+    return headerView;
+    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 40.0;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

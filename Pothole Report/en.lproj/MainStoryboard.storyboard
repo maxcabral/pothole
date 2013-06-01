@@ -74,7 +74,7 @@
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Not Sent" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7AE-dc-paY">
-                                            <rect key="frame" x="20" y="34" width="54" height="21"/>
+                                            <rect key="frame" x="20" y="34" width="71" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -243,7 +243,7 @@
             </objects>
             <point key="canvasLocation" x="-607" y="215"/>
         </scene>
-        <!--Phdetails View Controller - Location Details-->
+        <!--Phdetails View Controller - Pothole Details-->
         <scene sceneID="7MR-f1-1GQ">
             <objects>
                 <tableViewController id="Oyt-4B-QfB" customClass="phdetailsViewController" sceneMemberID="viewController">
@@ -384,7 +384,7 @@ Detail</string>
                             <outlet property="delegate" destination="Oyt-4B-QfB" id="KEF-jQ-bau"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Location Details" id="GkE-cv-v8R">
+                    <navigationItem key="navigationItem" title="Pothole Details" id="GkE-cv-v8R">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="bft-Bn-P7j">
                             <connections>
                                 <action selector="done:" destination="Oyt-4B-QfB" id="02A-hG-8RF"/>
