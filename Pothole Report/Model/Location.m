@@ -65,6 +65,7 @@
         if (![[self managedObjectContext] save:&saveError]){
             
         }
+        callback(self);
     }];
 }
 
