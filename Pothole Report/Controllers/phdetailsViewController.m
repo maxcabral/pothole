@@ -14,7 +14,8 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface phdetailsViewController () {
-
+    MBProgressHUD *hudView;
+    CLLocationManager *locationManager;
 }
 @property (nonatomic, strong) IBOutlet UITextView *descriptionTextView;
 @property (nonatomic, strong) IBOutlet UILabel *latitudeLabel;
@@ -37,7 +38,9 @@
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     if ((self = [super initWithCoder:aDecoder])) {
-
+        locationManager = [[CLLocationManager alloc] init];
+        locationManager.delegate = self;
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
     }
     return self;
 }
@@ -105,7 +108,15 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    if (self.location != nil && self.location.placemark == nil){
+
+    if (self.location == nil){
+        hudView = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hudView.labelText = @"Processing";
+        
+        self.addressLabel.text = @"Searching for Address...";
+        NSLog(@"%@",@"Starting manager");
+        [self startLocationManager];
+    } else if (self.location != nil && self.location.placemark == nil){
         [self.location performSelectorInBackground:@selector(geoLocate:) withObject:^(Location *thisLoc,NSError *saveError) {
             if (saveError == nil){
                 NSLog(@"Updated geolocation");
@@ -117,6 +128,50 @@
             }
         }];
     }
+}
+
+- (void)startLocationManager
+{
+    if ([CLLocationManager locationServicesEnabled]) {
+        [locationManager startUpdatingLocation];
+        [self performSelector:@selector(didTimeOut:) withObject:nil afterDelay:60];
+    }
+}
+
+- (void)stopLocationManager
+{
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(didTimeOut:) object:nil];
+    [locationManager stopUpdatingLocation];
+}
+
+- (void)didTimeOut:(id)obj
+{
+    NSLog(@"*** Time out");
+    [self stopLocationManager];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unable to Geolocate" message:@"Sorry, we were unable to fix your location. Please try again." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    [self closeScreen];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    [self stopLocationManager];
+    self.location = [Location locationFromCLLocation:newLocation andPlaceMark:nil];
+    [self.location performSelectorInBackground:@selector(geoLocate:) withObject:^(Location *thisLoc,NSError *saveError) {
+        if (saveError == nil){
+            NSLog(@"Updated geolocation");
+            if (self != nil) {
+                [self performSelectorOnMainThread:@selector(setLabels) withObject:nil waitUntilDone:NO];
+            }
+        } else {
+            
+        }
+        [hudView performSelectorOnMainThread:@selector(hide:) withObject:[NSNumber numberWithBool:YES] waitUntilDone:NO];
+    }];
 }
 
 - (void)setLabels

@@ -11,7 +11,7 @@
 
 @class Location;
 
-@interface phdetailsViewController : UITableViewController <UITextViewDelegate>
+@interface phdetailsViewController : UITableViewController <UITextViewDelegate, CLLocationManagerDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) Location *location;
