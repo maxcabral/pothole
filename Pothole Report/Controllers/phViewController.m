@@ -208,7 +208,7 @@
                                                         otherButtonTitles:nil];
     } else if ([messageBody isEqualToString:@""]){
         emailErrorAlert = [[UIAlertView alloc] initWithTitle:@"Nothing to Send"
-                                                                  message:@"Woohoo! You have no Potholes that need to be sent. That means they're being fixed, right?"
+                                                                  message:@"Woohoo! You have no Potholes to report. That means they're being fixed, right?"
                                                                  delegate:nil
                                                         cancelButtonTitle:@"OK"
                                                         otherButtonTitles:nil];
