@@ -61,6 +61,10 @@
 
 - (void)geoLocate:(void (^)(Location*,NSError*))callback
 {
+    if (![UIApplication hasConnectivity]){
+        callback(self,nil);
+    }
+    
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     CLLocation *location = [[CLLocation alloc] initWithLatitude:[self.latitude doubleValue] longitude:[self.longitude doubleValue]];
     

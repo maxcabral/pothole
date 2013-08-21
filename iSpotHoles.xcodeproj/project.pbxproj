@@ -20,6 +20,8 @@
 		503A91FF1736DA25009FE49D /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 503A91FE1736DA25009FE49D /* MBProgressHUD.m */; };
 		503A92011736E1DD009FE49D /* app_icon_iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 503A92001736E1DD009FE49D /* app_icon_iphone.png */; };
 		503A92031736E1E1009FE49D /* app_icon_iphone5_or_HighResIphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 503A92021736E1E1009FE49D /* app_icon_iphone5_or_HighResIphone.png */; };
+		5073E65F17C4739E005D11B9 /* UIApplication+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5073E65E17C4739E005D11B9 /* UIApplication+Helpers.m */; };
+		5073E66117C474BD005D11B9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5073E66017C474BD005D11B9 /* SystemConfiguration.framework */; };
 		5095B8281736ECDE0044AC21 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 503A92041736E1FA009FE49D /* Default.png */; };
 		5095B82B1736EE060044AC21 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 503A92061736E200009FE49D /* Default@2x.png */; };
 		5095B82C1736EE080044AC21 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 503A92081736E203009FE49D /* Default-568h@2x.png */; };
@@ -87,6 +89,9 @@
 		503A92041736E1FA009FE49D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		503A92061736E200009FE49D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		503A92081736E203009FE49D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		5073E65D17C4739E005D11B9 /* UIApplication+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Helpers.h"; sourceTree = "<group>"; };
+		5073E65E17C4739E005D11B9 /* UIApplication+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Helpers.m"; sourceTree = "<group>"; };
+		5073E66017C474BD005D11B9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5095B82E1736FA970044AC21 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button.png; path = "Pothole Images/button.png"; sourceTree = "<group>"; };
 		5095B8301736FB540044AC21 /* button_onclick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = button_onclick.png; path = "Pothole Images/button_onclick.png"; sourceTree = "<group>"; };
 		5095B832173701810044AC21 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = "Pothole Images/background.png"; sourceTree = "<group>"; };
@@ -128,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5073E66117C474BD005D11B9 /* SystemConfiguration.framework in Frameworks */,
 				F665E0C917364AE90081F40A /* MapKit.framework in Frameworks */,
 				501FABBB1735E6B000E5AF69 /* MessageUI.framework in Frameworks */,
 				501FABAC1735DDF500E5AF69 /* CoreData.framework in Frameworks */,
@@ -197,6 +203,7 @@
 		50CEC7071735936D007ADC0B = {
 			isa = PBXGroup;
 			children = (
+				5073E66017C474BD005D11B9 /* SystemConfiguration.framework */,
 				503A92081736E203009FE49D /* Default-568h@2x.png */,
 				503A92061736E200009FE49D /* Default@2x.png */,
 				503A92041736E1FA009FE49D /* Default.png */,
@@ -264,6 +271,8 @@
 				50CEC7211735936D007ADC0B /* iSpotHoles-Prefix.pch */,
 				502D8D961735C16900AD11AE /* NSString+URLEncoding.h */,
 				502D8D971735C1CF00AD11AE /* NSString+URLEncoding.m */,
+				5073E65D17C4739E005D11B9 /* UIApplication+Helpers.h */,
+				5073E65E17C4739E005D11B9 /* UIApplication+Helpers.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -423,6 +432,7 @@
 				503A91FA1736380D009FE49D /* Location.m in Sources */,
 				503A91FF1736DA25009FE49D /* MBProgressHUD.m in Sources */,
 				50C66A3517598A24009F817D /* NSMutableString+AddText.m in Sources */,
+				5073E65F17C4739E005D11B9 /* UIApplication+Helpers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

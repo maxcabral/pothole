@@ -148,22 +148,31 @@
 
     NSLog(@"*** Going to geocode");
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-    [geocoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks, NSError *error) {
-        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-        NSLog(@"*** Found placemarks: %@, error: %@", placemarks, error);
-        Location *newLocationModel;
-        
-        if (error == nil && [placemarks count] > 0) {
-            newLocationModel = [Location locationFromCLLocation:newLocation andPlaceMark:[placemarks lastObject]];
-        } else {
-            newLocationModel = [Location locationFromCLLocation:newLocation andPlaceMark:nil];
-        }
+    
+    if ([UIApplication hasConnectivity]){
+        [geocoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+            NSLog(@"*** Found placemarks: %@, error: %@", placemarks, error);
+            Location *newLocationModel;
+            
+            if (error == nil && [placemarks count] > 0) {
+                newLocationModel = [Location locationFromCLLocation:newLocation andPlaceMark:[placemarks lastObject]];
+            } else {
+                newLocationModel = [Location locationFromCLLocation:newLocation andPlaceMark:nil];
+            }
 
-        
+            
+            [self updateLabelsWithLocation:newLocationModel];
+            
+            [hudView hide:YES];
+        }];
+    } else {
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        Location *newLocationModel;
+        newLocationModel = [Location locationFromCLLocation:newLocation andPlaceMark:nil];
         [self updateLabelsWithLocation:newLocationModel];
-        
         [hudView hide:YES];
-    }];
+    }
 }
 
 @end
