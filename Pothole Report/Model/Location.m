@@ -50,6 +50,15 @@
     return [Location printableDescription:self];
 }
 
+- (void)geoLocateIfNecessary:(void (^)(Location*,NSError*))callback
+{
+    if (self.locationDescription == nil || [self.locationDescription isEqualToString:@""]){
+        [self geoLocate:callback];
+    } else {
+        callback(self,nil);
+    }
+}
+
 - (void)geoLocate:(void (^)(Location*,NSError*))callback
 {
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];

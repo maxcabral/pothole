@@ -22,6 +22,7 @@
 
 - (void)setCoordinate:(CLLocationCoordinate2D)newCoordinate;
 - (NSString *)description;
+- (void)geoLocateIfNecessary:(void (^)(Location*,NSError*))callback;
 - (void)geoLocate:(void (^)(Location*,NSError*))callback;
 - (NSString *)placemarkDescription;
 

@@ -193,6 +193,32 @@
 @implementation phViewController (EmailView)
 
 - (IBAction)showEmail:(id)sender {
+    
+    MBProgressHUD *emailHud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    emailHud.labelText = @"Processing";
+    emailHud.dimBackground = YES;
+    
+    [self performSelectorInBackground:@selector(cleanupGeocoding) withObject:nil];
+}
+
+- (void)cleanupGeocoding
+{
+    mutableFetchResults = [self getUnsentReports];
+    
+    __block int count = mutableFetchResults.count;
+    
+    for (Location *locRecord in mutableFetchResults) {
+        [locRecord geoLocate:^(Location *location, NSError *error) {
+            count--;
+            if (count == 0){
+                [self performSelectorOnMainThread:@selector(sendMessage) withObject:nil waitUntilDone:NO];
+            }
+        }];
+    }
+}
+
+- (void)sendMessage
+{
     // Email Subject
     NSString *emailTitle = @"Pothole report";
     // Email Content
@@ -202,16 +228,16 @@
     
     if (messageBody == nil){
         emailErrorAlert = [[UIAlertView alloc] initWithTitle:@"Processing Error"
-                                                                  message:@"Sorry, I was unable to process your stored Potholes. Please try again.\n\nIf this error persists, you may want to quit and reopen the app."
-                                                                 delegate:nil
-                                                        cancelButtonTitle:@"OK"
-                                                        otherButtonTitles:nil];
+                                                     message:@"Sorry, I was unable to process your stored Potholes. Please try again.\n\nIf this error persists, you may want to quit and reopen the app."
+                                                    delegate:nil
+                                           cancelButtonTitle:@"OK"
+                                           otherButtonTitles:nil];
     } else if ([messageBody isEqualToString:@""]){
         emailErrorAlert = [[UIAlertView alloc] initWithTitle:@"Nothing to Send"
-                                                                  message:@"Woohoo! You have no Potholes to report. That means they're being fixed, right?"
-                                                                 delegate:nil
-                                                        cancelButtonTitle:@"OK"
-                                                        otherButtonTitles:nil];
+                                                     message:@"Woohoo! You have no Potholes to report. That means they're being fixed, right?"
+                                                    delegate:nil
+                                           cancelButtonTitle:@"OK"
+                                           otherButtonTitles:nil];
     }
     
     //If we have an error to display, do it and return
@@ -228,9 +254,10 @@
     [mc setMessageBody:messageBody isHTML:NO];
     [mc setToRecipients:toRecipents];
     
+    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    
     // Present mail view controller on screen
     [self presentViewController:mc animated:YES completion:NULL];
-    
 }
 
 - (NSString*)reportBody
